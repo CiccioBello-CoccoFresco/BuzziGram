@@ -25,14 +25,15 @@
         $stmt->execute();
         $idStudente = $stmt->insert_id;
         $stmt = $conn->prepare('insert into utente(id, email, password) values (?,?,?)');
-        $stmt->bind_param("iss", $id, $email, $password);
+        $stmt->bind_param("iss", $idStudente, $email, $password);
         $stmt->execute();
         $stmt = $conn->prepare('select id from classe where anno = ? and sezione = ? and anno_scolastico = ?');
         $stmt->bind_param("iss", $anno, $sezione, $as);
         $stmt->execute();
         $idClasse = $stmt->get_result();
+
         $stmt = $conn->prepare('insert into frequenta values (?,?,?)');
-        $stmt->bind_param("isi", $idStudente, $idClasse, $rap);
+        $stmt->bind_param("iii", $idStudente, $idClasse, $rap);
         $stmt->execute();
         $app = $conn->commit();
         closeConn($conn);
