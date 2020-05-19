@@ -26,6 +26,7 @@
     border-radius: 25%;
     overflow: hidden;
     transition:all 1s ease;
+    box-shadow: 20px 30px 20px #000000;
   }
   .login:hover > .header, .login.clicked > .header {
     width: 2rem;

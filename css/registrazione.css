@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    user-select:none;
+  }
+  
+  body {
+    background-image: url("../img/img2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font: 100%/1 'Lobster', cursive;
+  }
+  
+  .pre_contenitore{
+      width:320px;
+    height:50px;
+    margin:auto;
+    position:absolute;
+    top:50%;
+    left:50%; 
+    margin:-210px 0 0 -195px;
+    border-bottom:none;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+      border-radius: 40px 40px 0px 0px;
+       background-color:white;
+       box-shadow: 20px 30px 20px #000000;
+       padding:20px;
+  }
+  
+  .pre_contenitore p{
+     color:green;
+     text-align: center;
+     font-size: 30px;
+     font-family: arial;
+    line-height:2px;
+    font: 'Lobster', cursive;
+  }
+  
+  /*contenitore contenete il form */
+  
+  .contenitore {
+      border-top:none;
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    margin:auto;
+    position:absolute;
+    top:50%;
+    left:50%; 
+    margin:-160px 0 0 -195px;
+      width: 320px;
+      height: 390px;
+      border-radius: 0px 0px 40px 40px;
+      padding:20px;
+      background-color:white;
+      box-shadow: 20px 20px 20px #000000;
+      color:black;
+  
+  }
+  
+  .contenitore input{
+    width: 100%;
+    margin-bottom: 20px;
+    border:none;
+    border:1px solid black;
+    height: 30px;
+  
+  }
+  .contenitore input[type="text"], input[type="password"] /* i css si riferiscono solo alla barra ditesto */
+  {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #black;
+    font-size: 16px;
+  }
+  
+  .contenitore p{
+    
+  }
+  .contenitore input[type="submit"]{  /* i css si riferiscono solo al pulsante */
+    border-radius: 14px;
+    height: 40px;
+  }
+  
+  .contenitore input[type="submit"]:hover {
+    background: lightblue;
+  }
