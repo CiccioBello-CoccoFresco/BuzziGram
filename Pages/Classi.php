@@ -5,7 +5,7 @@
 
     <body>
         <button></button> <button></button>
-        <div>
+        <div id = "annuario">
             <table>
                 <tr>
                     <th>Biennio</th>
