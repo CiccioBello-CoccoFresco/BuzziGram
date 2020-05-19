@@ -1,10 +1,11 @@
 {
-  "name": "Buzzigram",
+  "name": "buzzigram",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "jquery": "^3.5.1",
+    "jsdom": "^16.2.2",
     "material-components-web": "^6.0.0",
     "sass": "^1.26.5"
   },
