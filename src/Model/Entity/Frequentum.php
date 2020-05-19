@@ -6,14 +6,12 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Studente Entity
+ * Frequentum Entity
  *
- * @property int $matricola
- * @property string $nome
- * @property string $cognome
- * @property bool|null $rap
+ * @property int $studente
+ * @property int $classe
  */
-class Studente extends Entity
+class Frequentum extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -25,8 +23,8 @@ class Studente extends Entity
      * @var array
      */
     protected $_accessible = [
-        'nome' => true,
-        'cognome' => true,
-        'rap' => true,
+        '*' => true,
+        'studente' => false,
+        'classe' => false,
     ];
 }
