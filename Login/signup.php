@@ -5,7 +5,9 @@
 </head>
 <?php
     if(!isset($_POST['nome'])||!isset($_POST['cognome'])||!isset($_POST['classe'])||!isset($_POST['email'])||!isset($_POST['psw'])||!isset($_POST['as'])||!isset($_POST['rap'])){
-        Header('Location: registrazione.php');
+        echo '<script> alert("Non sono stati inseriti tutti i dati, la preghiamo di riprovare!"); 
+        window.location = "#";
+        </script>';
     }else{
         $nome = $_POST['nome'];
         $cognome =  $_POST['cognome'];
@@ -37,8 +39,8 @@
         closeConn($conn);
         if($app){
             echo '<script> alert("Registrazione avvenuta con successo. Stai per essere reindirizzato alla pagina di login"); 
-            '// window.location = "login.html";
-            .'</script>';
+            window.location = "login.html";
+            </script>';
         } else {
             echo '<script> alert("Problema di registrazione, la preghiamo di riprovare!"); 
             window.location = "#";
