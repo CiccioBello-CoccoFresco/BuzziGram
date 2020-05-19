@@ -1,0 +1,24 @@
+{
+  "name": "Buzzigram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "material-components-web": "^6.0.0",
+    "sass": "^1.26.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CiccioBello-CoccoFresco/BuzziGram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CiccioBello-CoccoFresco/BuzziGram/issues"
+  },
+  "homepage": "https://github.com/CiccioBello-CoccoFresco/BuzziGram#readme"
+}
