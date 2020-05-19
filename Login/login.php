@@ -15,7 +15,7 @@ $conn = openConn();
 $sql = $conn->prepare("Select id from utente where email = ? and password = ?");
 $sql->bind_param('ss', $email, $psw);
 $result = $sql->execute();
-closeConn($conn)
+closeConn($conn);
 if($result->num_rows != 0) echo 'Benvenuto';
 else echo 'Credenziali errate';
 
