@@ -67,11 +67,6 @@ class StudenteTable extends Table
             ->notEmptyString('cognome');
 
         $validator
-            ->integer('classe')
-            ->requirePresence('classe', 'create')
-            ->notEmptyString('classe');
-
-        $validator
             ->boolean('rap')
             ->allowEmptyString('rap');
 

@@ -31,10 +31,6 @@
                     <td><?= $this->Number->format($studente->matricola) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Classe') ?></th>
-                    <td><?= $this->Number->format($studente->classe) ?></td>
-                </tr>
-                <tr>
                     <th><?= __('Rap') ?></th>
                     <td><?= $studente->rap ? __('Yes') : __('No'); ?></td>
                 </tr>

@@ -6,14 +6,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Studente Entity
+ * Utente Entity
  *
- * @property int $matricola
- * @property string $nome
- * @property string $cognome
- * @property bool|null $rap
+ * @property int $id
+ * @property string $password
+ * @property string|null $token
  */
-class Studente extends Entity
+class Utente extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -25,8 +24,17 @@ class Studente extends Entity
      * @var array
      */
     protected $_accessible = [
-        'nome' => true,
-        'cognome' => true,
-        'rap' => true,
+        'password' => true,
+        'token' => true,
+    ];
+
+    /**
+     * Fields that are excluded from JSON versions of the entity.
+     *
+     * @var array
+     */
+    protected $_hidden = [
+        'password',
+        'token',
     ];
 }

@@ -24,7 +24,6 @@
                 <?php
                     echo $this->Form->control('nome');
                     echo $this->Form->control('cognome');
-                    echo $this->Form->control('classe');
                     echo $this->Form->control('rap');
                 ?>
             </fieldset>
