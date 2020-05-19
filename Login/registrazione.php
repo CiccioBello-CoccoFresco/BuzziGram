@@ -23,7 +23,7 @@
 			<header class="pre_contenitore">
 				<p>Register</p>
 			</header>
-			<form class="contenitore" action="login.php" method="post"> 
+			<form class="contenitore" action="signup.php" method="post"> 
             
                <input class="input" type="text" name="nome" placeholder="nome" required>
                 <input class="input" type="text" name="cognome" placeholder="cognome" required>
@@ -50,8 +50,8 @@
                         }
                     ?>
                 </select>
-                
-                
+                <label class="text">Sei rappresentante di classe?</label>
+                <input type="checkbox" name="rap">
 				<input type="submit" name="Confirm" value="Confirm">
             </form>
 			</div>

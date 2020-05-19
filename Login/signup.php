@@ -4,27 +4,35 @@
     ?>
 </head>
 <?php
-    if(!isset($_POST['nome'])||!isset($_POST['cognome'])||!isset($_POST['classe'])||!isset($_POST['email'])||!isset($_POST['psw'])||!isset($_POST['as'])){
+    if(!isset($_POST['nome'])||!isset($_POST['cognome'])||!isset($_POST['classe'])||!isset($_POST['email'])||!isset($_POST['psw'])||!isset($_POST['as'])||!isset($_POST['rap'])){
         Header('Location: registrazione.php');
     }else{
         $nome = $_POST['nome'];
         $cognome =  $_POST['cognome'];
         $classe = $_POST['classe'];
         $anno = $classe[0];
-        $sezione = $classe[2];
+        $sezione = $classe[1];
+        if(strlen($classe) === 3) $sezione = $sezione . $classe[2];
         $email = $_POST['email'];
         $psw = md5($_POST['psw']);
         $as = $_POST['as'];
-
-        /*$conn = openConn();
+        if($_POST['rap']) $rap = 1;
+        else $rap = 0;
+        $conn = openConn();
         $conn->begin_transaction();
-        $stmt = $conn->prepare('insert into studente values (?,?,?,?,?,?)');
-        $stmt->bind_param("ssssss", $_POST['cf'], $_POST['n_ordine'], $_POST['nome'], $_POST['cognome'], $_POST['citta'], $_POST['sigla']);
+        $stmt = $conn->prepare('insert into studente(nome, cognome) values (?,?)');
+        $stmt->bind_param("ss", $nome, $cognome);
         $stmt->execute();
-        $stmt = $conn->prepare('insert into utente(cf, email, password, livello) values (?,?,?,?)');
-        $psw = md5($_POST['password']);
-        $base_level = 1;
-        $stmt->bind_param("ssss", $_POST['cf'], $_POST['email'], $psw, $base_level);
+        $idStudente = $stmt->insert_id;
+        $stmt = $conn->prepare('insert into utente(id, email, password) values (?,?,?)');
+        $stmt->bind_param("iss", $id, $email, $password);
+        $stmt->execute();
+        $stmt = $conn->prepare('select id from classe where anno = ? and sezione = ? and anno_scolastico = ?');
+        $stmt->bind_param("iss", $anno, $sezione, $as);
+        $stmt->execute();
+        $idClasse = $stmt->get_result();
+        $stmt = $conn->prepare('insert into frequenta values (?,?,?)');
+        $stmt->bind_param("isi", $idStudente, $idClasse, $rap);
         $stmt->execute();
         $app = $conn->commit();
         closeConn($conn);
@@ -35,6 +43,6 @@
         } else {
             echo 'Problema di registrazione, la preghiamo di riprovare!';
             Header("Location: ".$_SERVER['HTTP_REFERER']);
-        }*/
+        }
     }
 ?>
