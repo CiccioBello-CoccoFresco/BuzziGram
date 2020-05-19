@@ -7,7 +7,7 @@
 	<title>registrazione</title>
     <link rel="stylesheet" type="text/css" href="../css/registrazione.css">
     <script src="../js/registrazione.js"></script>
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(() => {
             $("#as").on("change", function(){
