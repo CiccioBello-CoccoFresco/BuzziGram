@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "jquery": "^3.5.1",
     "material-components-web": "^6.0.0",
     "sass": "^1.26.5"
   },
