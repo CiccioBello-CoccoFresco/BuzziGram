@@ -7,7 +7,8 @@
 	<title>registrazione</title>
     <link rel="stylesheet" type="text/css" href="../css/registrazione.css">
     <script src="../js/registrazione.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
         $(document).ready(() => {
             $("#as").on("change", function(){
             var annoSelezionato = $(this).children("option:selected").val();

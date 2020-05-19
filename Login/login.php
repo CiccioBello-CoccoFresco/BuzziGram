@@ -9,7 +9,7 @@ if(!isset($_POST['email'])||!isset($_POST['psw'])){
 }
 $email = $_POST['email'];
 $psw = $_POST['psw'];
-/*$psw = md5($_POST['psw']);*/
+$psw = md5($_POST['psw']);
 
 $conn = openConn();
 $sql = "Select id from utente where email = ? and password = ?";
