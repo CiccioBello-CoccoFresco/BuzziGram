@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php
+        include_once '../utils/dbConnection.php';
+    ?>
 	<title>registrazione</title>
-	<link rel="stylesheet" type="text/css" href="../css/registrazione.css">
-    <script>$(document).ready(() => {
-                            $("#as").on("change", function(){
-                            var annoSelezionato = $(this).children("option:selected").val();
-                            caricaClasi(annoSelezionato);
-                        })
-                    });</script>
+    <link rel="stylesheet" type="text/css" href="../css/registrazione.css">
+    <script src="../js/registrazione.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">
+        $(document).ready(() => {
+            $("#as").on("change", function(){
+            var annoSelezionato = $(this).children("option:selected").val();
+            caricaClassi(annoSelezionato);
+        })
+    });
+    </script>
 </head>
 	<body>
 
@@ -22,8 +28,8 @@
                 <input class="input" type="text" name="cognome" placeholder="cognome" required>
                 
                 <select class="" id="classe" name="classe" required>
-                        <option selected disabled value="">Selezioanre anno scolastico...</option>
-                    </select>
+                        <option selected disabled value="">Selezionare anno scolastico...</option>
+                </select>
                 <input class="input" type="text" name="email" placeholder="email" required>
                 <input class="input" type="password" name="psw" placeholder="Password" required>
 

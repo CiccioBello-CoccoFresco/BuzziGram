@@ -1,7 +1,6 @@
 function caricaClassi(as) {
     var classe = document.getElementById("classe");
     var url = "../login/getClassi.php?as=" + as;
-    //if (provincia.value==""){
         $.ajax({
             url: url
             ,dataType: "json"
@@ -16,7 +15,7 @@ function caricaClassi(as) {
                 var stringa = "<option selected disabled value=''>Scegli...</option>";
 
                 for(var i=0; i<data.length; i++){
-                    var classeOttenuta = data[i]["anno"] + data[i]['sezione'];
+                    var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
                     var stringa = stringa + "<option value=" + classeOttenuta + ">"+ classeOttenuta +"</option>";
                 }
 
