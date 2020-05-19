@@ -31,7 +31,7 @@ CREATE TABLE Frequenta(
 
 CREATE TABLE Utente(
     id int(5) PRIMARY KEY,
-    email varchar(32) not null,
+    email varchar(32) not null UNIQUE,
     password char(32) not null,
     token char(32),
     FOREIGN KEY (id) REFERENCES Studente(matricola)
