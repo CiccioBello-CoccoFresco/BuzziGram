@@ -4,6 +4,7 @@
     </head>
 
     <body>
+        <button></button> <button></button>
         <div>
             <table>
                 <tr>
@@ -11,7 +12,7 @@
                 </tr>
                 <?php ?>
                 <tr>
-                    
+
                 </tr>
                 <?php ?>
             </table>
