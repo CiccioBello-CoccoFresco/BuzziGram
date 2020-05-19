@@ -27,14 +27,14 @@
                <input class="input" type="text" name="nome" placeholder="nome" required>
                 <input class="input" type="text" name="cognome" placeholder="cognome" required>
                 
-                <select class="" id="classe" name="classe" required>
+                <select class="classe" id="classe" name="classe" required>
                         <option selected disabled value="">Selezionare anno scolastico...</option>
                 </select>
                 <input class="input" type="text" name="email" placeholder="email" required>
                 <input class="input" type="password" name="psw" placeholder="Password" required>
 
                 <label class = "text">Anno scolastico</label>
-                <select class="" id="as" name="as" required>
+                <select class="anno" id="as" name="as" required>
                     <option selected disabled value="">Scegli...</option>
                     <?php
                         $conn = openConn();
@@ -51,7 +51,7 @@
                 </select>
                 
                 
-				<button class="btn" type="submit"></button>
+				<input type="submit" name="Confirm" value="Confirm">
             </form>
 			</div>
 
