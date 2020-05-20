@@ -30,6 +30,28 @@ function caricaAlunni(classe){
     })
 }
 
-function caricaFoto(classe, studente){
-    
+function caricaFoto(classe, studente){//ritorna la stringa da inserire in img src di uno studente di una classe
+    var obj = {
+        classe    : classe,
+        studente  : studente
+    };
+    var url = "../php/getAlunni.php" + $.param(obj);
+    $.ajax({
+        url: url
+        ,dataType: "json"
+        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(textStatus);
+        }
+    })
+    .done(function (data){
+
+        console.log(data);
+
+        var stringa = "";
+
+        return stringa;
+    })
+    .fail(function () {
+        console.log("errore");
+    })
 }
