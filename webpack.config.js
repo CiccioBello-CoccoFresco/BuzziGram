@@ -5,7 +5,7 @@ module.exports = {
   context: __dirname,
   entry: {
     registraziones: './css/registrazione.scss', 
-    MDC:'./js/mdc.js',
+    mdc_register:'./js/mdc_register.js',
     alunni: './js/alunni.js',
     classi: './js/classi.js',
     registrazione: './js/registrazione.js'

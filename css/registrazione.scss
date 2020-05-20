@@ -1,8 +1,13 @@
 @use "@material/textfield";
+@use "@material/form-field";
+@use "@material/checkbox";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/typography/mdc-typography";
 
 @include textfield.core-styles;
 
-/**
+
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +15,9 @@
   box-sizing: border-box;
   user-select:none;
 }
-
+/**
 body {
-  background-image: url("../img/img2.jpg");
+  //background-image: url("../img/img2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -67,7 +72,7 @@ body {
     color:black;
 
 }
-
+/**
 .contenitore input{
   width: 100%;
   margin-bottom: 20px;
