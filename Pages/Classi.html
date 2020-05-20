@@ -45,13 +45,19 @@
     <body>
         <nav class="navbar">
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Buzzigram</a>
+              <a href="#" class="brand-logo" style="margin-left: 10px;">Buzzigram</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="scelta">
-                        <select id="as" name="as" class='dropdown-trigger btn'>     
-                            <ul id='dropdown1' class='dropdown-content'>
-                            </ul>
-                        </select>
+                        <div class="dropdown">
+                            <button class="dropbtn">_Scegli...</button>
+                            <div class="dropdown-content">
+                                <select id="as" name="as" class='dropdown-trigger btn'>     
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                    </ul>
+                                </select>
+                            </div>
+                        </div>
+                        
                     </li>
                     <li>
                         <button class="btn" id="biennio">BIENNIO</button> <button class="btn" id="triennio">TRIENNIO</button>
