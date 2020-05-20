@@ -1,6 +1,6 @@
 <head>
     <?php
-        include_once '../utils/dbConnection.php';
+        include_once '../../php/Utils/dbConnection.php';
     ?>
 </head>
 <?php
@@ -18,7 +18,7 @@ $stmt->bind_param("ss", $email, $psw);
 $stmt->execute();
 $result = $stmt->get_result();
 closeConn($conn);
-if($result->num_rows != 0) Header('Location: ../Pages/Classi.html');
+if($result->num_rows != 0) Header('Location: ../Classi.html');
 else echo 'Credenziali errate';
 
 ?>

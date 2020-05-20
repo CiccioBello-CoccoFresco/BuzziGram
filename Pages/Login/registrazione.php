@@ -2,10 +2,10 @@
 <html>
 <head>
     <?php
-        include_once '../utils/dbConnection.php';
+        include_once '../../php/Utils/dbConnection.php';
     ?>
 	<title>registrazione</title>
-    <link rel="stylesheet" type="text/css" href="../css/registrazione.css">
+    <link rel="stylesheet" type="text/css" href="../../css/registrazione.css">
     <script src="../js/registrazione.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
