@@ -3,6 +3,9 @@ import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
 import {MDCNotchedOutline} from '@material/notched-outline';
 import {MDCFloatingLabel} from '@material/floating-label';
+// import autoInit from '@material/auto-init';
+
+//autoInit();
 
 const floatingLabels = [].map.call(document.querySelectorAll('.mdc-floating-label'), function(el) {
     return new MDCFloatingLabel(el);
@@ -17,6 +20,6 @@ const textFields = [].map.call(document.querySelectorAll('.mdc-text-field'), fun
     return new MDCTextField(el);
   });
 const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
-formField.input = checkbox;
+// formField.input = checkbox;
 
 //p
