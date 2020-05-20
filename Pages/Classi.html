@@ -5,7 +5,9 @@
             include_once '../utils/dbConnection.php';
         ?>
         <script src="../js/classi.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/classiTheme.css">
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script type="text/javascript">
             
             $(document).ready(() => {
@@ -41,8 +43,16 @@
     </head>
 
     <body>
-        <select id="as" name="as"></select>
-        <button id="biennio">BIENNIO</button> <button id="triennio">TRIENNIO</button>
+        <nav class="navbar">
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo">Buzzigram</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+              
+            <select id="as" name="as"></select>
+                <button id="biennio">BIENNIO</button> <button id="triennio">TRIENNIO</button>
+                </ul>
+            </div>
+          </nav>
         <div id = "annuario">
             
         </div>
