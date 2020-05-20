@@ -4,12 +4,12 @@ const path = require('path');
 module.exports = {
   context: __dirname,
   entry: {
-    registrazionecss: './css/registrazione.scss', 
+    registraziones: './css/registrazione.scss', 
     MDC:'./js/mdc.js',
     alunni: './js/alunni.js',
     classi: './js/classi.js',
     registrazione: './js/registrazione.js'
-  }, // cambia qui
+  }, 
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, './Pages/dist')
