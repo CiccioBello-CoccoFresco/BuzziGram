@@ -1,9 +1,9 @@
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  entry: ['./app.scss', './app.js'], // cambia qui
+  entry: ['./css/registrazione.scss', './js/app.js'], // cambia qui
   output: {
-    filename: 'bundle.js',
+    filename: 'main.js',
   },
   module: {
     rules: [
@@ -13,7 +13,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'bundle.css',
+              name: 'main.css',
             },
           },
           {loader: 'extract-loader'},
