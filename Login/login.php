@@ -18,7 +18,7 @@ $stmt->bind_param("ss", $email, $psw);
 $stmt->execute();
 $result = $stmt->get_result();
 closeConn($conn);
-if($result->num_rows != 0) Header('Location: ../Pages/Classi.php');
+if($result->num_rows != 0) Header('Location: ../Pages/Classi.html');
 else echo 'Credenziali errate';
 
 ?>

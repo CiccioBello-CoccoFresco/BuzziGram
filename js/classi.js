@@ -79,7 +79,7 @@ function caricaClassiAnnuario(as, mode) {
                     var stringa = stringa + "<tr>";
                     for(var j=0; j < resto; j++){
                         var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-                        var stringa = stringa + "<td id='classe'><a href=Alunni.php?id="+data[i]['id']+">"+classeOttenuta+"</a></td> ";
+                        var stringa = stringa + "<td id='classe'><a href=Alunni.html?id="+data[i]['id']+">"+classeOttenuta+"</a></td> ";
                         var i=i+1;
                     }
                     var stringa = stringa + "</tr>";

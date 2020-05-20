@@ -38,6 +38,7 @@
                 });
             });
             
+            $('.dropdown-trigger').dropdown();
 
         </script>
     </head>
@@ -46,10 +47,22 @@
         <nav class="navbar">
             <div class="nav-wrapper">
               <a href="#" class="brand-logo">Buzzigram</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-              
-            <select id="as" name="as"></select>
-                <button class="btn" id="biennio">BIENNIO</button> <button class="btn" id="triennio">TRIENNIO</button>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="scelta">
+                        <select id="as" name="as" class='dropdown-trigger btn'>     
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li><a href="#!">one</a></li>
+                                <li><a href="#!">two</a></li>
+                                <li class="divider" tabindex="-1"></li>
+                                <li><a href="#!">three</a></li>
+                                <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                                <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                            </ul>
+                        </select>
+                    </li>
+                    <li class="anno">
+                        <button class="btn" id="biennio">BIENNIO</button> <button class="btn" id="triennio">TRIENNIO</button>
+                    </li>
                 </ul>
             </div>
           </nav>
