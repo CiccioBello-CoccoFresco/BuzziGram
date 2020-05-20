@@ -17,14 +17,11 @@ function caricaClassiAnnuario(as, mode) {
             .done(function (data){
 
                 console.log(data);
-                console.log(data.length);
                 
-                var stringa = "<table>";
+                var stringa = "<table><th>MODE</th>";
                 var rows = parseInt(data.length/4);
                 var resto = parseInt(data.length%4);
                 var i = 0;
-                console.log(rows);
-                console.log(resto);
                 for(var k=0; k<rows; k++){
                     var stringa = stringa + "<tr>";
                     for(var j=0; j<4; j++){
