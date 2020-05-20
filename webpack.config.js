@@ -1,9 +1,10 @@
 const autoprefixer = require('autoprefixer');
+const path = require('path');
 
 module.exports = {
   context: __dirname,
   entry: {
-    registrazione: './css/registrazione.scss', 
+    registrazionecss: './css/registrazione.scss', 
     MDC:'./js/mdc.js',
     alunni: './js/alunni.js',
     classi: './js/classi.js',
