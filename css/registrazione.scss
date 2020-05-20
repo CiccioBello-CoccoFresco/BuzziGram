@@ -1,4 +1,6 @@
-@use "material-components-web";
+@use "@material/textfield";
+
+@include textfield.core-styles;
 
 /**
 * {
