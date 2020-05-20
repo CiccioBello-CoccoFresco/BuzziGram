@@ -4,7 +4,7 @@
         $classe = $_GET["classe"];
         if(isset($_GET['studente'])) {
             $studente = $_GET['studente'];
-            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"';
+            /*$sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"';
             if($mode === 'biennio') $sql = $sql . "and anno < 3";
             else $sql = $sql . "and anno > 2";
             $conn = openConn();
@@ -19,7 +19,7 @@
                     array_push($array,$row);
                 }
             }
-            echo json_encode($array);
+            echo json_encode($array);*/
             
         }else{
             $sql = 'SELECT studente FROM frequenta WHERE classe ="'. $classe . '"';
