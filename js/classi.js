@@ -21,7 +21,7 @@ function caricaClassiAnnuario(as, mode) {
                 else{
                     if(data[0]['anno'] < 3) var mode = "BIENNIO";
                     else var mode = "TRIENNIO";
-                    var stringa = "<table border = '1px'><th colspan = 4>"+mode+"</th>";
+                    var stringa = "<table id='tabella' border = '1px'><th colspan = 4>"+mode+"</th>";
                     var rows = parseInt(data.length/4);
                     var resto = parseInt(data.length%4);
                     var i = 0;
@@ -29,7 +29,7 @@ function caricaClassiAnnuario(as, mode) {
                         var stringa = stringa + "<tr>";
                         for(var j=0; j<4; j++){
                             var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-                            var stringa = stringa + "<td>"+classeOttenuta+"</td> ";
+                            var stringa = stringa + "<td id='classe'><a href=Alunni.php?id="+data[i]['id']+">"+classeOttenuta+"</a></td> ";
                             var i = i+1;
                         }
                         var stringa = stringa + "</tr>";
@@ -37,7 +37,7 @@ function caricaClassiAnnuario(as, mode) {
                     var stringa = stringa + "<tr>";
                     for(var j=0; j < resto; j++){
                         var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-                        var stringa = stringa + "<td>"+classeOttenuta+"</td> ";
+                        var stringa = stringa + "<td id='classe'><a href=Alunni.php?id="+data[i]['id']+">"+classeOttenuta+"</a></td> ";
                         var i=i+1;
                     }
                     var stringa = stringa + "</tr>";
