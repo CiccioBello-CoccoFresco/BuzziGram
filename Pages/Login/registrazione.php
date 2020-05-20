@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registrazione</title>
-    <link rel="stylesheet" type="text/css" href="../css/registrazione.css">
+    <?php
+        include_once '../../php/Utils/dbConnection.php';
+    ?>
+	<title>registrazione</title>
+    <link rel="stylesheet" type="text/css" href="../../css/registrazione.css">
     <script src="../js/registrazione.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
@@ -46,7 +49,18 @@
                     <label class = "text" for='as'>Anno scolastico</label>
                     <select class="anno" id="as" name="as" required>
                         <option selected disabled value="">Scegli...</option>
-                        <!-- classi.js -->
+                        <?php
+                            $conn = openConn();
+                            $sql = "SELECT DISTINCT anno_scolastico FROM classe";
+                            $result = $conn->query($sql);
+                            closeConn($conn);
+                            if ($result->num_rows > 0) {
+                    
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<option value="' . $row["anno_scolastico"] . '">' . $row["anno_scolastico"] . '</option>';
+                                }
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="mdc-form-field">
