@@ -1,12 +1,17 @@
 <html>
     <head>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript">
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            if(urlParams.has("id")) {
-                var id = urlParams.get("id");
-                console.log(id);
-            }else window.location.replace("../Pages/Classi.html");
+            $(document).ready(() => {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                if(urlParams.has("id")) {
+                    var id = urlParams.get("id");
+                    
+                }else window.location.replace("../Pages/Classi.html");
+            });
+            
+
         </script>
     </head>
 </html>
