@@ -4,81 +4,131 @@
 	<title>Registrazione</title>
     <link rel="stylesheet" type="text/css" href="../dist/registrazione.css">
     <script src="../dist/registrazione.js"></script>
+    <script src="../dist/classi.js"></script>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script type="text/javascript">
         $(document).ready(() => {
+            $("#as").on("click", function(){
+                caricaAnni();
+            })
+        });
+        $(document).ready(() => {
             $("#as").on("change", function(){
-            var annoSelezionato = $(this).children("option:selected").val();
-            caricaClassi(annoSelezionato);
-        })
-    });
+                var annoSelezionato = $(this).children("option:selected").val();
+                caricaClassi(annoSelezionato);
+            })
+        });
+        
     </script>    
 </head>
-	<body class="mdc-typography">
+	<body class="mdc-typography--overline">
 		<div class="reg">
-			<h1 class="pre_contenitore mdc-typography--headline1"> Registrazione </h1>
-			<form class="contenitore" action="../../php/Login/signup.php" method="post">
-                <div class="mdc-text-field mdc-text-field--outlined">
-                    <input class="mdc-text-field__input" id="text-field-hero-input" name="nome" required>
-                        <div class="mdc-notched-outline">
-                            <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="text-field-hero-input" class="mdc-floating-label">Nome</label>
-                                </div>
-                            <div class="mdc-notched-outline__trailing"></div>
-                        </div>
+            <div class="mdc-layout-grid">
+                <div class='mdc-layout-inner'>
+                <div class='mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--order-1'>
+                    <h1 class="pre_contenitore mdc-typography--headline2"> Registrazione </h1>
                 </div>
-                <div class="mdc-text-field mdc-text-field--outlined">
-                    <input class="mdc-text-field__input" id="text-field-hero-input" name="cognome" required>
-                        <div class="mdc-notched-outline">
-                            <div class="mdc-notched-outline__leading"></div>
-                                <div class="mdc-notched-outline__notch">
-                                    <label for="text-field-hero-input" class="mdc-floating-label">Cognome</label>
-                                </div>
-                            <div class="mdc-notched-outline__trailing"></div>
-                        </div>
                 </div>
-                <div class="mdc-form-field">
-                    <label class = "text" for='as'>Anno scolastico</label>
-                    <select class="anno" id="as" name="as" required>
-                        <option selected disabled value="">Scegli...</option>
-                        <!-- classi.js -->
-                    </select>
-                </div>
-                <div class="mdc-form-field">
-                    <select class="classe" id="classe" name="classe" required>
-                            <option selected disabled value="">Selezionare anno scolastico...</option>
-                    </select>
-                </div>
-                <div class="mdc-form-field">
-                    <input class="input" type="text" name="email" placeholder="email" required>
-                </div>
-
-                <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
-                    <i class="material-icons mdc-text-field__icon">visibility</i>
-                    <input class="mdc-text-field__input" id="text-field-hero-input">
-                    <div class="mdc-notched-outline">
-                      <div class="mdc-notched-outline__leading"></div>
-                      <div class="mdc-notched-outline__notch">
-                        <label for="text-field-hero-input" class="mdc-floating-label">Password</label>
-                      </div>
-                      <div class="mdc-notched-outline__trailing"></div>
+                <form class="contenitore" action="../../php/Login/signup.php" method="post">
+                <div class='mdc-layout-grid__inner'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input class="mdc-text-field__input" id="text-field-hero-input" name="nome" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Nome</label>
+                                    </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                    </div>
+                    </div>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-2'>    
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input class="mdc-text-field__input" id="text-field-hero-input" name="cognome" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Cognome</label>
+                                    </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                    </div>
                     </div>
                 </div>
-                
-                <div class="mdc-form-field">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" id="my-checkbox" class="mdc-checkbox__native-control" name='rap'/>
-                        <div class="mdc-checkbox__background">
+                <div class='mdc-layout-grid__inner'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>
+                        <label class = "text" for='as'>Anno scolastico</label>
+                        <select class="anno" id="as" name="as" required>
+                            <option selected disabled value="">Scegli...</option>
+                            <!-- classi.js -->
+                        </select>
+                    </div>
+                </div>
+                <div class='mdc-layout-grid__inner'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>
+                    <div class="mdc-form-field">
+                        <select class="classe" id="classe" name="classe" required>
+                                <option selected disabled value="">Selezionare anno scolastico...</option>
+                        </select>
+                    </div>
+                    </div>
+                </div>
+                <div class='mdc-layout-grid__inner'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input class="mdc-text-field__input" id="text-field-hero-input" name="email" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="text-field-hero-input" class="mdc-floating-label">Email</label>
+                                    </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                    </div>
+                    </div>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-2'>
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+                        <i class="material-icons mdc-text-field__icon">visibility</i>
+                        <input class="mdc-text-field__input" id="text-field-hero-input">
+                        <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label for="text-field-hero-input" class="mdc-floating-label">Password</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
                         </div>
                     </div>
-                    <label for="my-checkbox">Sei rappresentante di classe?</label>
-                </div>     
-				<input type="submit" name="Confirm" value="Confirm">
-            </form>
-			</div>				
+                    </div>
+                </div>
+                <div class='mdc-layout-grid__inner'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>  
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                            <input type="checkbox" id="my-checkbox" class="mdc-checkbox__native-control" name='rap'/>
+                            <div class="mdc-checkbox__background">
+                            </div>
+                        </div>
+                        <label for="my-checkbox">Sei rappresentante di classe?</label>
+                    </div> 
+                    </div>
+                </div>
+                <div class='mdc-layout-grid__inner'> 
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>
+                    <div class="mdc-form-field mdc-touch-target-wrapper">
+                        <button class="mdc-button mdc-button--touch mdc-button--raised">
+                        <div class="mdc-button__ripple"></div>
+                        <span class="mdc-button__label">Registrati</span>
+                        <div class="mdc-button__touch"></div>
+                        </button>
+                    </div>
+                    </div>
+                </div>   
+                </form>
+            </div>
+		</div>				
     </body>
     <script src="../dist/mdc_register.js"></script>
 </html>

@@ -12,6 +12,7 @@ function calcolaAnnoScolastico() {
     }
     return as;
 }
+
 function caricaAnni(){
     var url = "../php/getAnni.php";
     $.ajax({
@@ -20,8 +21,7 @@ function caricaAnni(){
         ,error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(textStatus);
         }
-    })
-    .done(function (data){
+    }).done(function (data){
 
         console.log(data);
 
@@ -36,8 +36,7 @@ function caricaAnni(){
         var temp=calcolaAnnoScolastico();
         $("#as").val(temp);
 
-    })
-    .fail(function () {
+    }).fail(function () {
         console.log("errore");
     })
 }
