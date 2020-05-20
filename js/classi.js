@@ -17,28 +17,32 @@ function caricaClassiAnnuario(as, mode) {
             .done(function (data){
 
                 console.log(data);
-                
-                var stringa = "<table><th>MODE</th>";
-                var rows = parseInt(data.length/4);
-                var resto = parseInt(data.length%4);
-                var i = 0;
-                for(var k=0; k<rows; k++){
+                if(data[0] === 'norows') var stringa = "<p>Nessuna classe trovata</p>";
+                else{
+                    if(data[0]['anno'] < 3) var mode = "BIENNIO";
+                    else var mode = "TRIENNIO";
+                    var stringa = "<table border = '1px'><th colspan = 4>"+mode+"</th>";
+                    var rows = parseInt(data.length/4);
+                    var resto = parseInt(data.length%4);
+                    var i = 0;
+                    for(var k=0; k<rows; k++){
+                        var stringa = stringa + "<tr>";
+                        for(var j=0; j<4; j++){
+                            var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
+                            var stringa = stringa + "<td>"+classeOttenuta+"</td> ";
+                            var i = i+1;
+                        }
+                        var stringa = stringa + "</tr>";
+                    }
                     var stringa = stringa + "<tr>";
-                    for(var j=0; j<4; j++){
+                    for(var j=0; j < resto; j++){
                         var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
                         var stringa = stringa + "<td>"+classeOttenuta+"</td> ";
-                        var i = i+1;
+                        var i=i+1;
                     }
                     var stringa = stringa + "</tr>";
+                    var stringa = stringa + "</table>";
                 }
-                var stringa = stringa + "<tr>";
-                for(var j=0; j < resto; j++){
-                    var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-                    var stringa = stringa + "<td>"+classeOttenuta+"</td> ";
-                    var i=i+1;
-                }
-                var stringa = stringa + "</tr>";
-                var stringa = stringa + "</table>";
                 $("#annuario").html(stringa);
 
             })
