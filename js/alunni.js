@@ -1,6 +1,6 @@
-function caricaAlunni(id){
+function caricaAlunni(classe){
     var obj = {
-        id    : id
+        classe    : classe
     };
     var url = "../php/getAlunni.php" + $.param(obj);
     $.ajax({
@@ -14,15 +14,14 @@ function caricaAlunni(id){
 
         console.log(data);
 
-        var stringa = "<option selected disabled value=''>Scegli...</option>";
+        var stringa = "";
 
         for(var i=0; i<data.length; i++){
-            var anno = data[i]["anno_scolastico"];
-            var stringa = stringa + "<option value=" + anno + ">"+ anno +"</option>";
+            
         }
 
-        $("#as").find('option').remove().end().append(stringa);
-        var temp=calcolaAnnoScolastico();
+        $("#id");//
+
         $("#as").val(temp);
 
     })
@@ -31,6 +30,6 @@ function caricaAlunni(id){
     })
 }
 
-function caricaFoto(id){
-
+function caricaFoto(classe, studente){
+    
 }
