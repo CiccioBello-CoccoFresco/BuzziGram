@@ -21,17 +21,27 @@
                 return as;
             }
             $(document).ready(() => {
-
+                var mode = "biennio";
                 $("#as").on("change", function(){
-                var annoSelezionato = $(this).children("option:selected").val();
-                caricaClassi(annoSelezionato);
-                })
+                    var annoSelezionato = $(this).children("option:selected").val();
+                    caricaClassiAnnuario(annoSelezionato, mode);
+                });
 
                 $(function() {
                     var temp=calcolaAnnoScolastico(); 
                     $("#as").val(temp);
                 });
 
+                $("#biennio").on("click", function(){
+                    var annoSelezionato = $("#as").children("option:selected").val();
+                    var mode = "biennio";
+                    caricaClassiAnnuario(annoSelezionato, mode);
+                });
+                $("#triennio").on("click", function(){
+                    var annoSelezionato = $("#as").children("option:selected").val();
+                    var mode = "triennio";
+                    caricaClassiAnnuario(annoSelezionato, mode);
+                });
             });
             
 
@@ -54,28 +64,9 @@
                     }
                 ?>
         </select>
-        <button></button> <button></button>
+        <button id="biennio">BIENNIO</button> <button id="triennio">TRIENNIO</button>
         <div id = "annuario">
-            <table>
-                <tr>
-                    <th>Biennio</th>
-                </tr>
-                <?php ?>
-                <tr>
-
-                </tr>
-                <?php ?>
-            </table>
-        </div>
-        <div>
-        <table>
-                <tr>
-                    <th>Triennio</th>
-                </tr>
-                <tr>
-
-                </tr>
-            </table>
+            
         </div>
     </body>
 </html>
