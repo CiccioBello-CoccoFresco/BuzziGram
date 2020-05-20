@@ -1,5 +1,5 @@
 <?php
-    include_once '../utils/dbConnection.php';
+    include_once 'utils/dbConnection.php';
     if(isset($_GET['classe'])){
         $classe = $_GET["classe"];
         if(isset($_GET['studente'])) {

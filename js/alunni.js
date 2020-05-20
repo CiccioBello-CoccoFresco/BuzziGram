@@ -2,7 +2,8 @@ function caricaAlunni(classe){
     var obj = {
         classe    : classe
     };
-    var url = "../php/getAlunni.php" + $.param(obj);
+    console.log("../php/getAlunni.php?" + $.param(obj));
+    var url = "../php/getAlunni.php?" + $.param(obj);
     $.ajax({
         url: url
         ,dataType: "json"
@@ -22,7 +23,6 @@ function caricaAlunni(classe){
 
         $("#id");//
 
-        $("#as").val(temp);
 
     })
     .fail(function () {

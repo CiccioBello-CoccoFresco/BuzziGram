@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script src="../js/alunni.js"></script>
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(() => {
@@ -7,7 +8,7 @@
                 const urlParams = new URLSearchParams(queryString);
                 if(urlParams.has("id")) {
                     var id = urlParams.get("id");
-                    
+                    caricaAlunni(id);
                 }else window.location.replace("../Pages/Classi.html");
             });
             
