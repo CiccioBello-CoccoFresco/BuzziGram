@@ -1,5 +1,5 @@
 <?php 
 
-    Header('Location: ./Pages/Login/login.html');
+    Header('Location: ./dist/Login/login.html');
 
 ?>

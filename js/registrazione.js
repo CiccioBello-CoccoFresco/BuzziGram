@@ -14,6 +14,6 @@ $(document).ready(() => {
 $(document).ready(() => {
     $("#as").on("change", function(){
         var annoSelezionato = $(this).children("option:selected").val();
-        caricaClassi(annoSelezionato);
+        classi.caricaClassi(annoSelezionato);
     })
 });
