@@ -12,4 +12,6 @@
 5. Zoom su foto
 6. Implementare sessione
 
-
+```bash
+npm run build
+```
