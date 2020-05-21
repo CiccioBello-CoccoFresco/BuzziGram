@@ -17,7 +17,7 @@ function caricaAlunni(classe){
 
         var stringa = "";
         console.log(data.length);
-        caricaFoto(classe, data[1]['studente']);
+        caricaFoto(classe, data[0]['studente']);
         /*for(var i=0; i<data.length; i++){
             
         }*/
@@ -44,12 +44,10 @@ function caricaFoto(classe, studente){//ritorna la stringa da inserire in img sr
         }
     })
     .done(function (data){
+        console.log("IMMAGINE");
+        $("#prova").attr("src", data);
 
-        console.log("IMMAGINE : " + data);
-
-        var stringa = data;
-
-        return stringa;
+        //return stringa;
     })
     .fail(function () {
         console.log("errore");
