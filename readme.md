@@ -6,5 +6,7 @@
 4. Navbar
 5. Zoom su foto personale
 6. Implementare sessione
-ok
 
+```bash
+npm run build
+```
