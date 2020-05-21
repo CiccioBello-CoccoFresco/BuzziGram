@@ -1,6 +1,13 @@
-.misure{
-    width: 300px;
-    height: 300px;
+body{
+  /*background-image: url("../img/imgh.jpg");*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.foto{
+  width: "600px" ;
+  height: "400px";
 }
 
 .pos{
@@ -8,9 +15,10 @@
     margin-left: 10px;
 }
 
+
 div.gallery {
     margin: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     float: left;
     width: 180px;
   }
@@ -32,3 +40,14 @@ div.gallery {
     transform: scale(2);
 
   }
+
+  .divpos{
+    width:1600px;
+    height:700px;
+    position:absolute;
+    top:50%;
+    left:50%; 
+    margin:-350px 0 0 -800px;
+    background: white;
+    opacity: 0.8;
+    }
