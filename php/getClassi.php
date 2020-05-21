@@ -12,13 +12,14 @@
             closeConn($conn);
             // output data of each row
             $array = array();
-            if($result->num_rows === 0){
+            if($result->num_rows == 0){
                 array_push($array, "norows");
             }else{
                 while($row = $result->fetch_assoc()) {
                     array_push($array,$row);
                 }
             }
+            var_dump($array);
             echo json_encode($array);
             
         }else{

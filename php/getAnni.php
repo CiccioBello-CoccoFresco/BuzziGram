@@ -1,5 +1,5 @@
 <?php
-    include_once '../utils/dbConnection.php';
+    include_once 'utils/dbConnection.php';
     $sql = 'SELECT DISTINCT anno_scolastico FROM classe order by anno_scolastico desc';
     $conn = openConn();
     $result = $conn->query($sql);

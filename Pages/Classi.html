@@ -4,7 +4,7 @@
         <script src="dist/classi.js"></script>
         <link rel="stylesheet" type="text/css" href="../css/classiTheme.css">
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             
         <script type="text/javascript">
             
@@ -17,6 +17,7 @@
                 });
                 $("#as").on("change", function(){
                     var annoSelezionato = $(this).children("option:selected").val();
+                    //$("#annoSelezionato").innerHTML = annoSelezionato;
                     caricaClassiAnnuario(annoSelezionato, mode);
                 });
                 
@@ -35,8 +36,6 @@
                     caricaClassiAnnuario(annoSelezionato, mode);
                 });
             });
-            
-            $('.dropdown-trigger').dropdown();
 
 
         </script>
@@ -49,13 +48,14 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="scelta">
                         <div class="dropdown">
-                            <button class="dropbtn">_Scegli...</button>
-                            <div class="dropdown-content">
+                            <!-- Dropdown Trigger 
+                            <a class='dropdown-trigger btn' id="annoSelezionato" data-target='dropdown1'></a>-->
+
+                            <!-- Dropdown Structure -->
+                            
                                 <select id="as" name="as" class='dropdown-trigger btn'>     
-                                    <ul id='dropdown1' class='dropdown-content'>
-                                    </ul>
+                                    <ul id='dropdown1' class='dropdown-content'></ul>
                                 </select>
-                            </div>
                         </div>
                         
                     </li>
