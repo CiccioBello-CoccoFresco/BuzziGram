@@ -4,8 +4,8 @@
   $background: rgb(23, 85, 26),
 );
 @use "@material/textfield";
-@use "@material/form-field";
-@use "@material/checkbox";
+@use "@material/form-field/mdc-form-field";
+@use "@material/checkbox/mdc-checkbox";
 @use "@material/floating-label/mdc-floating-label";
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/typography/mdc-typography";
