@@ -3,7 +3,7 @@
     if(isset($_GET['classe'])){
         $classe = $_GET["classe"];
         
-        $sql = 'SELECT studente FROM frequenta WHERE classe ="'. $classe . '"';
+        $sql = 'SELECT studente, cognome, nome FROM frequenta f join studente s on f.studente = s.matricola WHERE classe ="'. $classe . '"order by cognome asc';
         $conn = openConn();
         $result = $conn->query($sql);
         closeConn($conn);

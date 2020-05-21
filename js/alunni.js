@@ -16,13 +16,13 @@ function caricaAlunni(classe){
         console.log(data);
 
         var stringa = "";
-        var idStud;
         console.log(stringa);
         //$("#prova").attr("src", caricaFoto(classe, data[1]['studente']));
         for(var i=0; i<data.length; i++){
-            idStud = data[i]['studente'];
-            stringa = stringa + "<div class='gallery'> <div id='n"+idStud+"' class='desc'></div><a target='_blank'><img id ='f"+idStud+"' class = 'foto'></a> <div id = 'd"+idStud+"'class='desc'>Frase</div></div>";
-            
+            var idStud = data[i]['studente'];
+            var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
+            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><a target='_blank'><img id ='f"+idStud+"' class = 'foto'></a> <div id = 'd"+idStud+"'class='desc'>Frase</div></div>";
+            caricaFoto(classe, idStud); 
         }
         $("#container").append(stringa);
 
@@ -49,10 +49,12 @@ function caricaFoto(classe, studente){//ritorna la stringa da inserire in img sr
     .done(function (data){
         if(data[0] === "norows"){
             $("#f"+studente).attr("src", "../img/Cicciobello.png");
-            $("#d"+studente).innerHTML = "Immagine non presente";
+            $("#d"+studente).text("Foto non inserita");
         }else{
-            $("#"+studente).attr("src", data);
+            $("#f"+studente).attr("src", data[0]);
+            $("#d"+studente).text(data[1]);
         }
+        
     })
     .fail(function () {
         console.log("errore");
