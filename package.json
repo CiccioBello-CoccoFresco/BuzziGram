@@ -6,6 +6,7 @@
   "dependencies": {
     "jquery": "^3.5.1",
     "jsdom": "^16.2.2",
+    "lodash": "^4.17.15",
     "material-components-web": "^6.0.0"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "css-loader": "^3.5.3",
     "extract-loader": "^5.0.1",
     "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
     "postcss-loader": "^3.0.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
@@ -25,11 +27,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "translate": "sass --watch --no-source-map --load-path=node_modules css/:css/",
-    "start": "webpack-dev-server",
     "dev": "webpack --watch --mode=development",
-    "prod": "webpack --mode=production",
-    "build": "webpack"
+    "dev-server": "webpack-dev-server --watch --mode=development",
+    "prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",

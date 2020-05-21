@@ -1,18 +1,18 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 
-module.exports = {
-  context: __dirname,
+module.exports = [{
   entry: {
-    registraziones: './css/registrazione.scss', 
-    mdc_register:'./js/mdc_register.js',
-    alunni: './js/alunni.js',
-    classi: './js/classi.js',
-    registrazione: './js/registrazione.js'
-  }, 
+    registrazione: './js/registrazione.js',
+    
+  },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, './Pages/dist')
+    filename: 'registrazione.js',
+    path: path.resolve(__dirname, 'dist/assets'),
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
   },
   module: {
     rules: [
@@ -25,12 +25,12 @@ module.exports = {
               name: '[name].css',
             },
           },
-          {loader: 'extract-loader'},
-          {loader: 'css-loader'},
+          { loader: 'extract-loader' },
+          { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [autoprefixer()]
+               plugins: () => [autoprefixer()]
             }
           },
           {
@@ -46,15 +46,15 @@ module.exports = {
               },
             },
           }
-        ],
+        ]
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['@babel/preset-env'],
+          presets: ['@babel/preset-env']
         },
       }
-    ],
+    ]
   },
-};
+}];

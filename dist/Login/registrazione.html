@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registrazione</title>
-    <link rel="stylesheet" type="text/css" href="../dist/registrazione.css">
-    <script src="../dist/registrazione.js"></script>
-    <script src="../dist/classi.js"></script>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrazione</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript">
-        $(document).ready(() => {
-            $("#as").on("click", function(){
-                caricaAnni();
-            })
-        });
-        $(document).ready(() => {
-            $("#as").on("change", function(){
-                var annoSelezionato = $(this).children("option:selected").val();
-                caricaClassi(annoSelezionato);
-            })
-        });
-        
-    </script>    
+    <link rel="stylesheet" href="../assets/registrazione.css">
 </head>
 	<body class="mdc-typography--overline">
 		<div class="reg">
@@ -128,7 +113,7 @@
                 </div>   
                 </form>
             </div>
-		</div>				
-    </body>
-    <script src="../dist/mdc_register.js"></script>
+        </div>
+        <script src="../assets/registrazione.js" async></script> 				
+    </body> 
 </html>

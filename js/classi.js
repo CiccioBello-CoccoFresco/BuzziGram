@@ -1,4 +1,3 @@
-
 function calcolaAnnoScolastico() {
     var d = new Date();
     var y = d.getFullYear() - 2000;
@@ -14,7 +13,7 @@ function calcolaAnnoScolastico() {
 }
 
 function caricaAnni(){
-    var url = "../php/getAnni.php";
+    var url = "../../php/getAnni.php";
     $.ajax({
         url: url
         ,dataType: "json"
@@ -39,7 +38,8 @@ function caricaAnni(){
     }).fail(function () {
         console.log("errore");
     })
-}
+}  
+
 function caricaClassiAnnuario(as, mode) {
     var classe = document.getElementById("classe");
     var obj = {
@@ -47,7 +47,7 @@ function caricaClassiAnnuario(as, mode) {
         mode : mode
     };
     console.log("../login/getClassi.php?" + $.param(obj));
-    var url = "../php/getClassi.php?" + $.param(obj);
+    var url = "../../php/getClassi.php?" + $.param(obj);
         $.ajax({
             url: url
             ,dataType: "json"
@@ -91,3 +91,36 @@ function caricaClassiAnnuario(as, mode) {
                 console.log("errore");
             })
 }
+
+function caricaClassi(as) {
+    var classe = document.getElementById("classe");
+    var url = "../../php/getClassi.php?as=" + as;
+    $.ajax({
+        url: url
+        ,dataType: "json"
+        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(textStatus);
+        }
+    })
+    .done(function (data){
+
+        console.log(data);
+
+        var stringa = "<option selected disabled value=''>Scegli...</option>";
+
+        for(var i=0; i<data.length; i++){
+            var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
+            var stringa = stringa + "<option value=" + classeOttenuta + ">"+ classeOttenuta +"</option>";
+        }
+
+        $("#classe").find('option').remove().end().append(stringa);
+
+    })
+    .fail(function () {
+        console.log("errore");
+    })
+}
+
+console.log("classi-charged");
+
+export default {calcolaAnnoScolastico, caricaClassiAnnuario, caricaAnni, caricaClassi}

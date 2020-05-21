@@ -1,28 +1,19 @@
-function caricaClassi(as) {
-    var classe = document.getElementById("classe");
-    var url = "../php/getClassi.php?as=" + as;
-    $.ajax({
-        url: url
-        ,dataType: "json"
-        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(textStatus);
-        }
+import "../css/registrazione.scss";
+//JS
+window.$ = require('../node_modules/jquery/dist/jquery')
+require('./mdc_register');
+import classi from "./classi";
+
+console.log("reg-charged");
+
+$(document).ready(() => {
+    $("#as").on("click", function(){
+        classi.caricaAnni();
+    } )
+});
+$(document).ready(() => {
+    $("#as").on("change", function(){
+        var annoSelezionato = $(this).children("option:selected").val();
+        caricaClassi(annoSelezionato);
     })
-    .done(function (data){
-
-        console.log(data);
-
-        var stringa = "<option selected disabled value=''>Scegli...</option>";
-
-        for(var i=0; i<data.length; i++){
-            var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-            var stringa = stringa + "<option value=" + classeOttenuta + ">"+ classeOttenuta +"</option>";
-        }
-
-        $("#classe").find('option').remove().end().append(stringa);
-
-    })
-    .fail(function () {
-        console.log("errore");
-    })
-}
+});
