@@ -2,7 +2,6 @@ function caricaAlunni(classe){
     var obj = {
         classe    : classe
     };
-    console.log("../php/getAlunni.php?" + $.param(obj));
     var url = "../php/getAlunni.php?" + $.param(obj);
     $.ajax({
         url: url
@@ -13,15 +12,12 @@ function caricaAlunni(classe){
     })
     .done(function (data){
 
-        console.log(data);
 
         var stringa = "";
-        console.log(stringa);
-        //$("#prova").attr("src", caricaFoto(classe, data[1]['studente']));
         for(var i=0; i<data.length; i++){
             var idStud = data[i]['studente'];
             var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
-            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><a target='_blank'><img id ='f"+idStud+"' class = 'foto'></a> <div id = 'd"+idStud+"'class='desc'>Frase</div></div>";
+            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><a target='_blank'><img id ='f"+idStud+"' class = 'foto'></a> <div id = 'd"+idStud+"'class='desc'></div></div>";
             caricaFoto(classe, idStud); 
         }
         $("#container").append(stringa);
