@@ -16,12 +16,12 @@ function caricaAlunni(classe){
         console.log(data);
 
         var stringa = "";
-
-        for(var i=0; i<data.length; i++){
+        console.log(data.length);
+        caricaFoto(classe, data[1]['studente']);
+        /*for(var i=0; i<data.length; i++){
             
-        }
+        }*/
 
-        $("#id");//
 
 
     })
@@ -35,19 +35,19 @@ function caricaFoto(classe, studente){//ritorna la stringa da inserire in img sr
         classe    : classe,
         studente  : studente
     };
-    var url = "../php/getAlunni.php" + $.param(obj);
+    var url = "../php/getFoto.php?" + $.param(obj);
     $.ajax({
         url: url
-        ,dataType: "json"
+        ,dataType: "text"
         ,error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(textStatus);
         }
     })
     .done(function (data){
 
-        console.log(data);
+        console.log("IMMAGINE : " + data);
 
-        var stringa = "";
+        var stringa = data;
 
         return stringa;
     })
