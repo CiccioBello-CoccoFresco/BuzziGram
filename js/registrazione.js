@@ -4,8 +4,6 @@ window.$ = require('../node_modules/jquery/dist/jquery')
 require('./mdc_register');
 import classi from "./classi";
 
-console.log("reg-charged");
-
 $(document).ready(() => {
     $("#as").on("click", function(){
         classi.caricaAnni();

@@ -1,5 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = [{
   entry: {
@@ -14,8 +15,15 @@ module.exports = [{
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
   },
+  plugins: [
+      new CleanWebpackPlugin(),
+  ],
   module: {
     rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader',],
+      },
       {
         test: /\.scss$/,
         use: [

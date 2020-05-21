@@ -15,9 +15,9 @@ function calcolaAnnoScolastico() {
 function caricaAnni(){
     var url = "../../php/getAnni.php";
     $.ajax({
-        url: url
-        ,dataType: "json"
-        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
+        url: url,
+        dataType: "json",
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(textStatus);
         }
     }).done(function (data){
@@ -120,7 +120,5 @@ function caricaClassi(as) {
         console.log("errore");
     })
 }
-
-console.log("classi-charged");
 
 export default {calcolaAnnoScolastico, caricaClassiAnnuario, caricaAnni, caricaClassi}
