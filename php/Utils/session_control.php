@@ -1,15 +1,17 @@
 <?php
 
-    include_once "../utils/dbConnection.php";
+    include_once "dbConnection.php";
 
-    $TOKEN_DURATION = 60*0.1;
+    $TOKEN_DURATION = 60*10;
 
     function checkSession(){
         session_start();
 
         if(!empty($_COOKIE['PHPSESSID'])) {
             try{
-                if($_SESSION['time'] + $GLOBALS['TOKEN_DURATION'] < time()) {
+                if(!isset($_SESSION['time'])){
+                    return false;
+                } else if($_SESSION['time'] + $GLOBALS['TOKEN_DURATION'] < time()) {
                     regenerateToken();
                     return true;
                 } else {
@@ -51,7 +53,6 @@
             $psw = md5($_POST['password']);
             $stmt->bind_param("sss", $token, $_POST['email'], $psw);
             $stmt->execute();
-            echo "OLLU";
             closeConn($conn);
         } catch(PDOException $e){
 			echo "Error: " . $e->getMessage();
@@ -62,18 +63,17 @@
         }
         if(!isset($_SESSION['nome'])){
             $conn = openConn();
-            $stmt = $conn->prepare('Select m.nome, m.cognome from medico m join utente u on m.cf=u.cf where u.token = ?');
+            $stmt = $conn->prepare('Select s.nome, s.cognome, u.id from studente s join utente u on u.id = s.matricola where u.token = ?');
             $stmt->bind_param("s", $token);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $_SESSION['nome'] = "".$row['nome'][0].". ".$row['cognome'];
-            echo $_SESSION['nome']; 
+            $_SESSION['user'] = $row['id'];
+            $_SESSION['nome'] = "".$row['nome'][0].". ".$row['cognome']; 
             closeConn($conn);
         }
         $_SESSION['token'] = $token;
         $_SESSION['time'] = time();
-        $_SESSION['user'] = $_POST['email'];
         $_SESSION['ricordami'] = $remeberMe;
         //var_dump($_SESSION);
         // setcookie('PHPSESSID', $token, time()+60*60*24*30, "/", "", false, true);
@@ -111,7 +111,15 @@
         } catch(PDOException $e){
 			echo "Error: " . $e->getMessage();
         }
-        
-        unset($_SESSION);
+        $_SESSION = array();
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+
+        session_destroy();
     }
 ?>

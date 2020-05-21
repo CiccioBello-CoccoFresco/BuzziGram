@@ -2,7 +2,6 @@ function caricaAlunni(classe){
     var obj = {
         classe    : classe
     };
-    console.log("../php/getAlunni.php?" + $.param(obj));
     var url = "../php/getAlunni.php?" + $.param(obj);
     $.ajax({
         url: url
@@ -13,43 +12,19 @@ function caricaAlunni(classe){
     })
     .done(function (data){
 
-        console.log(data);
 
         var stringa = "";
-
         for(var i=0; i<data.length; i++){
-            
+            var idStud = data[i]['studente'];
+            var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
+            var pathImg = data[i]['file'];
+            var frase = data[i]['frase'];
+            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><a target='_blank'><img src='"+pathImg+"'class ='foto'></a> <div class='desc'>"+frase+"</div></div>";
         }
+        $("#container").append(stringa);
+        $("#loading").hide();
 
-        $("#id");//
 
-
-    })
-    .fail(function () {
-        console.log("errore");
-    })
-}
-
-function caricaFoto(classe, studente){//ritorna la stringa da inserire in img src di uno studente di una classe
-    var obj = {
-        classe    : classe,
-        studente  : studente
-    };
-    var url = "../php/getAlunni.php" + $.param(obj);
-    $.ajax({
-        url: url
-        ,dataType: "json"
-        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(textStatus);
-        }
-    })
-    .done(function (data){
-
-        console.log(data);
-
-        var stringa = "";
-
-        return stringa;
     })
     .fail(function () {
         console.log("errore");

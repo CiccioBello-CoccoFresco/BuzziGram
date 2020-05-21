@@ -1,6 +1,8 @@
 <html>
     <head>
+        
         <script src="../js/alunni.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/alunniTheme.css">
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(() => {
@@ -8,11 +10,19 @@
                 const urlParams = new URLSearchParams(queryString);
                 if(urlParams.has("id")) {
                     var id = urlParams.get("id");
+                    //document.getElementById("loading").classList.remove("hidden");
                     caricaAlunni(id);
                 }else window.location.replace("../Pages/Classi.html");
             });
-            
-
         </script>
     </head>
+
+
+    <body>
+        <div class="divpos">
+            <div id = "container" style="border: 3px solid black;">
+                 <img id="loading" src="../img/loading.gif" class="hidden">
+            </div>
+        </div>
+    </body>
 </html>
