@@ -2,10 +2,11 @@
     include_once 'utils/dbConnection.php';
     //Query per email, nome, cognome
     $studente = 2;//temporaneo, sostituire con $_SESSION['user'] quando verrà implementata la session
-    $sql = 'SELECT email, nome, cognome FROM utente u join studente s on u.id = s.matricola WHERE studente ='. $studente;
+    $sql = 'SELECT email, nome, cognome FROM utente u join studente s on u.id = s.matricola WHERE matricola ='. $studente;
     $conn = openConn();
     $result = $conn->query($sql);
     $array = array();
+    //var_dump($result);
     if($result->num_rows != 0){
         $row = $result->fetch_assoc();
         array_push($array,$row['email']);
@@ -18,6 +19,13 @@
             $result = $conn->query($sql);
             array_push($array,"foto");
             while($row = $result->fetch_assoc()) {
+                if(isset($row['file'])) {
+                    $pathSrc = 'data:image/jpeg;base64,'.base64_encode( $row['file'] );
+                }else{
+                    $pathSrc = "nofoto";
+                    $row['frase'] = "Foto non inserita";
+                }
+                $row['file'] = $pathSrc;
                 array_push($array,$row);
             }
         }else array_push($array,"admin");

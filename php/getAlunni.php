@@ -4,8 +4,8 @@
         $classe = $_GET["classe"];
         
         $sql = 'SELECT f.studente, cognome, nome, file, frase
-        FROM frequenta f join studente s on f.studente = s.matricola left join immagine i on s.matricola = i.studente
-        WHERE f.classe = '.$classe.' 
+        FROM frequenta f join studente s on f.studente = s.matricola left join immagine i on s.matricola = i.studente and i.classe = f.classe
+        WHERE f.classe ='.$classe.' 
         order by cognome asc';
         $conn = openConn();
         $result = $conn->query($sql);

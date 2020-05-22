@@ -5,10 +5,6 @@ body{
     background-size: cover;
 }
 
-.foto{
-  width: "600px" ;
-  height: "400px";
-}
 
 .pos{
     align-content: left;
@@ -28,8 +24,8 @@ div.gallery {
   }
   
   div.gallery img {
-    width: 100%;
-    height: auto;
+    width: 180px;
+  height: 215px;
   }
   
   div.desc {
@@ -50,4 +46,4 @@ div.gallery {
     margin:-350px 0 0 -800px;
     background: white;
     opacity: 0.8;
-    }
+ }
