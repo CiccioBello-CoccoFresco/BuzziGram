@@ -8,21 +8,26 @@
 @use "@material/select"
 @use "@material/button"
 @use "@material/layout-grid/mdc-layout-grid"
+@use "@material/image-list/mdc-image-list"
+@use "@material/image-list"
 
 @include button.core-styles
-
 @include textfield.core-styles
 
-* 
-  margin: 12db
-  padding: 0
-  -moz-box-sizing: border-box
-  box-sizing: border-box
+.my-image-list 
+  @include image-list.standard-columns(1)
 
-img
-  width:auto
-  height:auto
+.centered-text
+  text-align: center
 
+.imgbox
+  display: grid
+  height: 100%
+
+.center-fit 
+  max-width: 100%
+  max-height: 100vh
+  margin: auto
 /**
   .sfondo { 
     background-image: url("../img/polaroid.jpg");

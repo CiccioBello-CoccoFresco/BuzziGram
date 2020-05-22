@@ -31,3 +31,5 @@ function caricaAlunni(classe){
         console.log("errore");
     })
 }
+
+export default caricaAlunni

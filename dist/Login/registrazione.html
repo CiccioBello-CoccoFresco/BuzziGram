@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../assets/registrazione.css">
 </head>
-	<body class="mdc-typography--overline">
-		<div class="reg">
-            <div class="mdc-layout-grid">
-                <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-1'>
-                <div class='mdc-layout-inner'>
-                <div class='mdc-layout-grid__cell--align-middle mdc-layout-grid__cell--span-1'>
-                    <h1 class="pre_contenitore mdc-typography--headline2"> Registrazione </h1>
-                </div>
-                </div>
-                <form class="contenitore" action="../../php/Login/signup.php" method="post">
+	<body class="mdc-typography">
+        <div class="mdc-layout-grid">
+            <div class='mdc-layout-grid__inner'>
+                <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                 <div class='mdc-layout-grid__inner'>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-2'>
+                <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-9'>
+                    <h1 class="centered-text mdc-typography--headline2"> REGISTRAZIONE </h1>
+                </div>
+                </div>
+                <form class="mdc-layout-grid__inner" action="../../php/Login/signup.php" method="post">
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                     <div class="mdc-text-field mdc-text-field--outlined">
                         <input class="mdc-text-field__input" id="text-field-hero-input" name="nome" required>
                             <div class="mdc-notched-outline">
@@ -31,7 +30,7 @@
                             </div>
                     </div>
                     </div>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-3'>    
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>    
                     <div class="mdc-text-field mdc-text-field--outlined">
                         <input class="mdc-text-field__input" id="text-field-hero-input" name="cognome" required>
                             <div class="mdc-notched-outline">
@@ -43,27 +42,20 @@
                             </div>
                     </div>
                     </div>
-                </div>
-                <div class='mdc-layout-grid__inner'>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-3'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-8'>
                         <label class = "text" for='as'>Anno scolastico</label>
                         <select class="anno" id="as" name="as" required>
                             <option selected disabled value="">Scegli...</option>
-                            <!-- classi.js -->
                         </select>
                     </div>
-                </div>
-                <div class='mdc-layout-grid__inner'>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-1'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-8'>
                     <div class="mdc-form-field">
                         <select class="classe" id="classe" name="classe" required>
                                 <option selected disabled value="">Selezionare anno scolastico...</option>
                         </select>
                     </div>
                     </div>
-                </div>
-                <div class='mdc-layout-grid__inner'>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-2'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                     <div class="mdc-text-field mdc-text-field--outlined">
                         <input class="mdc-text-field__input" id="text-field-hero-input" name="email" required>
                             <div class="mdc-notched-outline">
@@ -75,7 +67,7 @@
                             </div>
                     </div>
                     </div>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-2'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                         <div class="mdc-text-field mdc-text-field--outlined" bis_skin_checked="1">
                             <input type="password" class="mdc-text-field__input" id="text-field-hero-input" required>
                             <div class="mdc-notched-outline" bis_skin_checked="1">
@@ -87,31 +79,27 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class='mdc-layout-grid__inner'>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>  
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>  
                         <div class="mdc-form-field">
+                            <label for="checkbox-1">Sei Rappresentante di Classe?</label>
                             <div class="mdc-checkbox">
                                 <input type="checkbox"
                                         class="mdc-checkbox__native-control"
                                         id="checkbox-1"/>
                                 <div class="mdc-checkbox__background">
                                 <svg class="mdc-checkbox__checkmark"
-                                     viewBox="0 0 24 24">
-                                  <path class="mdc-checkbox__checkmark-path"
+                                        viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path"
                                         fill="none"
                                         d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
                                 </svg>
                                 <div class="mdc-checkbox__mixedmark"></div>
-                              </div>
-                              <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                <div class="mdc-checkbox__ripple"></div>
                             </div>
-                            <label for="checkbox-1">Sei Rappresentante di Classe?</label>
-                          </div>
+                        </div>
                     </div>
-                </div>
-                <div class='mdc-layout-grid__inner'> 
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--order-1'>
+                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>
                     <div class="mdc-form-field mdc-touch-target-wrapper">
                         <button class="mdc-button mdc-button--touch mdc-button--raised">
                         <div class="mdc-button__ripple"></div>
@@ -119,12 +107,17 @@
                         <div class="mdc-button__touch"></div>
                         </button>
                     </div>
-                    </div>
-                </div>   
+                    </div>  
                 </form>
                 </div>
-                <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-2'>
-                    <div id="sfondo"></div>
+                <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-7'>
+                    <ul class="mdc-image-list my-image-list">
+                        <li class="mdc-image-list__item">
+                          <div class="mdc-image-list__image-aspect-container">
+                              <div id="imgbox"></div>
+                          </div>
+                        </li>
+                      </ul>
                 </div>
             </div>
         </div>
