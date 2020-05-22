@@ -81,32 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./js/alunni.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./js/login.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./js/alunni.js":
-/*!**********************!*\
-  !*** ./js/alunni.js ***!
-  \**********************/
+/***/ "./js/login.js":
+/*!*********************!*\
+  !*** ./js/login.js ***!
+  \*********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _alunniLib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./alunniLib */ \"./js/alunniLib.js\");\n//import \"../css/alunni.sass\";\n//JS\nwindow.$ = __webpack_require__(/*! ../node_modules/jquery/dist/jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n$(document).ready(function () {\n  var queryString = window.location.search;\n  var urlParams = new URLSearchParams(queryString);\n\n  if (urlParams.has(\"id\")) {\n    var id = urlParams.get(\"id\"); //document.getElementById(\"loading\").classList.remove(\"hidden\");\n\n    _alunniLib__WEBPACK_IMPORTED_MODULE_1__[\"default\"].caricaAlunni(id);\n  } else window.location.replace(\"../Pages/Classi.html\");\n});\n\n//# sourceURL=webpack:///./js/alunni.js?");
-
-/***/ }),
-
-/***/ "./js/alunniLib.js":
-/*!*************************!*\
-  !*** ./js/alunniLib.js ***!
-  \*************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction caricaAlunni(classe) {\n  var obj = {\n    classe: classe\n  };\n  var url = \"../php/getAlunni.php?\" + $.param(obj);\n  $.ajax({\n    url: url,\n    dataType: \"json\",\n    error: function error(XMLHttpRequest, textStatus, errorThrown) {\n      console.log(textStatus);\n    }\n  }).done(function (data) {\n    var stringa = \"\";\n\n    for (var i = 0; i < data.length; i++) {\n      var idStud = data[i]['studente'];\n      var cognomeNomeStud = data[i]['cognome'] + \" \" + data[i]['nome'];\n      var pathImg = data[i]['file'];\n      var frase = data[i]['frase'];\n      stringa = stringa + \"<div class='gallery'> <div class='desc'>\" + cognomeNomeStud + \"</div><img width=180px height=220px src='\" + pathImg + \"' class ='foto'><div class='desc'>\" + frase + \"</div></div>\";\n    }\n\n    $(\"#container\").append(stringa);\n    $(\"#loading\").hide();\n  }).fail(function () {\n    console.log(\"errore\");\n  });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  caricaAlunni: caricaAlunni\n});\n\n//# sourceURL=webpack:///./js/alunniLib.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n//import \"../css/login.sass\";\n//JS\nwindow.$ = __webpack_require__(/*! ../node_modules/jquery/dist/jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n//# sourceURL=webpack:///./js/login.js?");
 
 /***/ }),
 
