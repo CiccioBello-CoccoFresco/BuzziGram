@@ -43,17 +43,21 @@
                     </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-8'>
-                        <label class = "text" for='as'>Anno scolastico</label>
-                        <select class="anno" id="as" name="as" required>
-                            <option selected disabled value="">Scegli...</option>
-                        </select>
-                    </div>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-8'>
-                    <div class="mdc-form-field">
-                        <select class="classe" id="classe" name="classe" required>
-                                <option selected disabled value="">Selezionare anno scolastico...</option>
-                        </select>
-                    </div>
+                        <div class="mdc-select">
+                            <div class="mdc-select__anchor demo-width-class">
+                                <span class="mdc-select__ripple"></span>
+                                <input type="text" disabled readonly class="mdc-select__selected-text">
+                                <i class="mdc-select__dropdown-icon"></i>
+                                <span class="mdc-floating-label">Seleziona la classe</span>
+                                <span class="mdc-line-ripple"></span>
+                            </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                                <ul id="lista" class="mdc-list">
+                                    <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                                    <span id="here"></span>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                     <div class="mdc-text-field mdc-text-field--outlined">
@@ -80,8 +84,7 @@
                         </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>  
-                        <div class="mdc-form-field">
-                            <label for="checkbox-1">Sei Rappresentante di Classe?</label>
+                        <div class="form">
                             <div class="mdc-checkbox">
                                 <input type="checkbox"
                                         class="mdc-checkbox__native-control"
@@ -97,10 +100,11 @@
                                 </div>
                                 <div class="mdc-checkbox__ripple"></div>
                             </div>
+                            <label for="checkbox-1" class="text">Sei Rappresentante di Classe?</label>
                         </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>
-                    <div class="mdc-form-field mdc-touch-target-wrapper">
+                    <div class="mdc-form-field mdc-touch-target-wrapper mdc-typography--button">
                         <button class="mdc-button mdc-button--touch mdc-button--raised">
                         <div class="mdc-button__ripple"></div>
                         <span class="mdc-button__label">Registrati</span>
@@ -121,6 +125,6 @@
                 </div>
             </div>
         </div>
-        <script src="../assets/registrazione.js" async></script> 				
+        <script src="../assets/registrazione.js"></script> 				
     </body> 
 </html>

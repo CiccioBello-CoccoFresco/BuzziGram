@@ -92,31 +92,32 @@ function caricaClassiAnnuario(as, mode) {
             })
 }
 
-function caricaClassi(as) {
+function caricaClassi(as = calcolaAnnoScolastico()) {
     var classe = document.getElementById("classe");
     var url = "../../php/getClassi.php?as=" + as;
     $.ajax({
-        url: url
-        ,dataType: "json"
-        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
+        url: url,
+        dataType: "json",
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.log(textStatus);
         }
-    })
-    .done(function (data){
+    }).done(function (data){
 
         console.log(data);
 
-        var stringa = "<option selected disabled value=''>Scegli...</option>";
+        var stringa = '';
 
         for(var i=0; i<data.length; i++){
             var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-            var stringa = stringa + "<option value=" + classeOttenuta + ">"+ classeOttenuta +"</option>";
+            var stringa = stringa 
+                            + '<li class="mdc-list-item" data-value="'+ classeOttenuta +'"><span class="mdc-list-item__text">'
+                            + classeOttenuta 
+                            +"</span></li>";
         }
+        console.log(stringa);
+        $("#here").append(stringa);
 
-        $("#classe").find('option').remove().end().append(stringa);
-
-    })
-    .fail(function () {
+    }).fail(function () {
         console.log("errore");
     })
 }
