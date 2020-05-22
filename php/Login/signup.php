@@ -4,9 +4,9 @@
     ?>
 </head>
 <?php
-    if(!isset($_POST['nome'])||!isset($_POST['cognome'])||!isset($_POST['classe'])||!isset($_POST['email'])||!isset($_POST['psw'])||!isset($_POST['as'])||!isset($_POST['rap'])){
+    if(!isset($_POST['nome']) || !isset($_POST['cognome']) || !isset($_POST['classe']) || !isset($_POST['email'])||!isset($_POST['psw'])){
         echo '<script> alert("Non sono stati inseriti tutti i dati, la preghiamo di riprovare!"); 
-        window.location = "#";
+        window.location = "../../";
         </script>';
     }else{
         $nome = $_POST['nome'];
@@ -17,8 +17,8 @@
         if(strlen($classe) === 3) $sezione = $sezione . $classe[2];
         $email = $_POST['email'];
         $psw = md5($_POST['psw']);
-        $as = $_POST['as'];
-        $_POST['rap'] === '1' ? $rap = 1 : $rap = 0;
+        $as = '2019/2020';
+        isset($_POST['rap']) ? $rap = 1 : $rap = 0;
         $conn = openConn();
         $conn->begin_transaction();
         $stmt = $conn->prepare('insert into studente(nome, cognome) values (?,?)');
@@ -39,11 +39,11 @@
         closeConn($conn);
         if($app){
             echo '<script> alert("Registrazione avvenuta con successo. Stai per essere reindirizzato alla pagina di login"); 
-            window.location = "login.html";
+            window.location = "../../";
             </script>';
         } else {
             echo '<script> alert("Problema di registrazione, la preghiamo di riprovare!"); 
-            window.location = "#";
+            window.location = "../../dist/Login/registrazione.html";
             </script>';
         }
     }

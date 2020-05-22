@@ -17,7 +17,7 @@
                     <h1 class="centered-text mdc-typography--headline2"> REGISTRAZIONE </h1>
                 </div>
                 </div>
-                <form class="mdc-layout-grid__inner" action="../../php/Login/signup.php" method="post">
+                <form id="submittami" class="mdc-layout-grid__inner" action="../../php/Login/signup.php" method="post">
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                     <div class="mdc-text-field mdc-text-field--outlined">
                         <input class="mdc-text-field__input" id="text-field-hero-input" name="nome" required>
@@ -46,6 +46,7 @@
                         <div class="mdc-select">
                             <div class="mdc-select__anchor demo-width-class">
                                 <span class="mdc-select__ripple"></span>
+                                <input id='hid' type="hidden" name="classe" value="" />
                                 <input type="text" disabled readonly class="mdc-select__selected-text">
                                 <i class="mdc-select__dropdown-icon"></i>
                                 <span class="mdc-floating-label">Seleziona la classe</span>
@@ -73,7 +74,7 @@
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                         <div class="mdc-text-field mdc-text-field--outlined" bis_skin_checked="1">
-                            <input type="password" class="mdc-text-field__input" id="text-field-hero-input" required>
+                            <input type="password" name='psw' class="mdc-text-field__input" id="text-field-hero-input" required>
                             <div class="mdc-notched-outline" bis_skin_checked="1">
                               <div class="mdc-notched-outline__leading" bis_skin_checked="1"></div>
                               <div class="mdc-notched-outline__notch" bis_skin_checked="1">
@@ -105,7 +106,7 @@
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>
                     <div class="mdc-form-field mdc-touch-target-wrapper mdc-typography--button">
-                        <button class="mdc-button mdc-button--touch mdc-button--raised">
+                        <button id="sub" class="mdc-button mdc-button--touch mdc-button--raised">
                         <div class="mdc-button__ripple"></div>
                         <span class="mdc-button__label">Registrati</span>
                         <div class="mdc-button__touch"></div>

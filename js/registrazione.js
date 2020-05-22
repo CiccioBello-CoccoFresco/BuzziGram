@@ -10,3 +10,6 @@ $("#imgbox").append('<img src="../assets/'+img+'">').addClass('mdc-image-list__i
 // ciao
 classi.caricaClassi();
 
+$('#sub').on('click', ()=>{
+    $('#submittami').submit();
+})
