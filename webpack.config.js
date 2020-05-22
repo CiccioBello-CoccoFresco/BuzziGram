@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = [{
   entry: {
     registrazione: './js/registrazione.js',
-    
+    classi: './js/classi.js',
   },
   output: {
     filename: 'registrazione.js',
