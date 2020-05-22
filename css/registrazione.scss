@@ -1,33 +1,53 @@
-@use "@material/theme" with ( $primary: #00b409, $secondary: #000000, $background: rgb(23, 85, 26))
-@use "@material/textfield"
-@use "@material/form-field/mdc-form-field"
-@use "@material/checkbox/mdc-checkbox"
-@use "@material/floating-label/mdc-floating-label"
-@use "@material/notched-outline/mdc-notched-outline"
-@use "@material/typography/mdc-typography"
-@use "@material/select"
-@use "@material/button"
-@use "@material/layout-grid/mdc-layout-grid"
-@use "@material/image-list/mdc-image-list"
-@use "@material/image-list"
+@use "@material/theme" with ( 
+  $primary: #006d05, 
+  $secondary: #000000, 
+  $background: rgb(23, 85, 26)
+);
+@use "@material/textfield";
+@use "@material/form-field/mdc-form-field";
+@use "@material/checkbox/mdc-checkbox";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/typography/mdc-typography";
+@use "@material/select";
+@use "@material/button";
+@use "@material/layout-grid/mdc-layout-grid";
+@use "@material/image-list/mdc-image-list";
+@use "@material/image-list";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/select/mdc-select";
 
-@include button.core-styles
-@include textfield.core-styles
+.demo-width-class {
+  width: 400px;
+}
 
-.my-image-list 
+@include button.core-styles;
+@include textfield.core-styles;
+
+.my-image-list {
   @include image-list.standard-columns(1)
+}
 
-.centered-text
-  text-align: center
+.centered-text{
+  text-align: center;
+}
 
-.imgbox
-  display: grid
-  height: 100%
+.imgbox{
+  display: grid;
+  height: 100%;
+}
 
-.center-fit 
-  max-width: 100%
-  max-height: 100vh
-  margin: auto
+.center-fit{ 
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.text{
+  padding: 10px;
+  vertical-align: middle;
+}
 /**
   .sfondo { 
     background-image: url("../img/polaroid.jpg");

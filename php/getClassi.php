@@ -1,5 +1,5 @@
 <?php
-    include_once '../utils/dbConnection.php';
+    include_once './Utils/dbConnection.php';
     if(isset($_GET['as'])){
         $as = $_GET["as"];
         if(isset($_GET['mode'])) {

@@ -1,4 +1,4 @@
-import "../css/registrazione.sass";
+import "../css/registrazione.scss";
 //JS
 window.$ = require('../node_modules/jquery/dist/jquery');
 import _ from 'lodash';
@@ -7,12 +7,9 @@ import classi from "./classiLib";
 import img  from "../img/polaroid.jpg";
 
 $("#imgbox").append('<img src="../assets/'+img+'">').addClass('mdc-image-list__image').addClass('center-fit');
-$(document).ready(() => { 
-    classi.caricaAnni();
-});
-$(document).ready(() => {
-    $("#as").on("change", function(){
-        var annoSelezionato = $(this).children("option:selected").val();
-        classi.caricaClassi(annoSelezionato);
-    })
-});
+// ciao
+classi.caricaClassi();
+
+$('#sub').on('click', ()=>{
+    $('#submittami').submit();
+})

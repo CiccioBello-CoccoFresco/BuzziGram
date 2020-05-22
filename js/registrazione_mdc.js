@@ -4,6 +4,13 @@ import {MDCCheckbox} from '@material/checkbox';
 import {MDCNotchedOutline} from '@material/notched-outline';
 import {MDCFloatingLabel} from '@material/floating-label';
 import {MDCRipple} from '@material/ripple';
+import {MDCSelect} from '@material/select';
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+select.listen('MDCSelect:change', () => {
+  $('#hid').val(select.value);
+});
 
 const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
 const formField = new MDCFormField(document.querySelector('.mdc-form-field'));

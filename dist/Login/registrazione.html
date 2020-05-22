@@ -17,7 +17,7 @@
                     <h1 class="centered-text mdc-typography--headline2"> REGISTRAZIONE </h1>
                 </div>
                 </div>
-                <form class="mdc-layout-grid__inner" action="../../php/Login/signup.php" method="post">
+                <form id="submittami" class="mdc-layout-grid__inner" action="../../php/Login/signup.php" method="post">
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                     <div class="mdc-text-field mdc-text-field--outlined">
                         <input class="mdc-text-field__input" id="text-field-hero-input" name="nome" required>
@@ -43,17 +43,22 @@
                     </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-8'>
-                        <label class = "text" for='as'>Anno scolastico</label>
-                        <select class="anno" id="as" name="as" required>
-                            <option selected disabled value="">Scegli...</option>
-                        </select>
-                    </div>
-                    <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-8'>
-                    <div class="mdc-form-field">
-                        <select class="classe" id="classe" name="classe" required>
-                                <option selected disabled value="">Selezionare anno scolastico...</option>
-                        </select>
-                    </div>
+                        <div class="mdc-select">
+                            <div class="mdc-select__anchor demo-width-class">
+                                <span class="mdc-select__ripple"></span>
+                                <input id='hid' type="hidden" name="classe" value="" />
+                                <input type="text" disabled readonly class="mdc-select__selected-text">
+                                <i class="mdc-select__dropdown-icon"></i>
+                                <span class="mdc-floating-label">Seleziona la classe</span>
+                                <span class="mdc-line-ripple"></span>
+                            </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                                <ul id="lista" class="mdc-list">
+                                    <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                                    <span id="here"></span>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                     <div class="mdc-text-field mdc-text-field--outlined">
@@ -69,7 +74,7 @@
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-5'>
                         <div class="mdc-text-field mdc-text-field--outlined" bis_skin_checked="1">
-                            <input type="password" class="mdc-text-field__input" id="text-field-hero-input" required>
+                            <input type="password" name='psw' class="mdc-text-field__input" id="text-field-hero-input" required>
                             <div class="mdc-notched-outline" bis_skin_checked="1">
                               <div class="mdc-notched-outline__leading" bis_skin_checked="1"></div>
                               <div class="mdc-notched-outline__notch" bis_skin_checked="1">
@@ -80,8 +85,7 @@
                         </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>  
-                        <div class="mdc-form-field">
-                            <label for="checkbox-1">Sei Rappresentante di Classe?</label>
+                        <div class="form">
                             <div class="mdc-checkbox">
                                 <input type="checkbox"
                                         class="mdc-checkbox__native-control"
@@ -97,11 +101,12 @@
                                 </div>
                                 <div class="mdc-checkbox__ripple"></div>
                             </div>
+                            <label for="checkbox-1" class="text">Sei Rappresentante di Classe?</label>
                         </div>
                     </div>
                     <div class='mdc-layout-grid__cell mdc-layout-grid__cell--span-10'>
-                    <div class="mdc-form-field mdc-touch-target-wrapper">
-                        <button class="mdc-button mdc-button--touch mdc-button--raised">
+                    <div class="mdc-form-field mdc-touch-target-wrapper mdc-typography--button">
+                        <button id="sub" class="mdc-button mdc-button--touch mdc-button--raised">
                         <div class="mdc-button__ripple"></div>
                         <span class="mdc-button__label">Registrati</span>
                         <div class="mdc-button__touch"></div>
@@ -121,6 +126,6 @@
                 </div>
             </div>
         </div>
-        <script src="../assets/registrazione.js" async></script> 				
+        <script src="../assets/registrazione.js"></script> 				
     </body> 
 </html>
