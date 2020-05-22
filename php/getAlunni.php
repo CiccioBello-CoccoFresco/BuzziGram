@@ -15,10 +15,11 @@
         if($result->num_rows === 0) array_push($array,"norows");;
         while($row = $result->fetch_assoc()) {
             if(isset($row['file'])) {
-                $pathSrc = 'data:image/jpeg;base64,'.base64_encode( $row['file'] );
+                //$pathSrc = 'data:image/jpeg;base64,'.base64_encode( $row['file'] );
+                $pathSrc = 'data:image;base64,'.$row['file'];
             }else{
                 $pathSrc = "../img/Cicciobello.png";
-                $row['frase'] = "Foto non inserita";
+                $row['frase'] = "fg,ndfghkljfdhjdglkj";
             }
             $row['file'] = $pathSrc;
             

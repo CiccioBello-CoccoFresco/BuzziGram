@@ -12,8 +12,8 @@
         array_push($array,$row['email']);
         array_push($array,$row['nome']);
         array_push($array,$row['cognome']);
-        if($studente != 1){
-            $sql = 'SELECT anno_scolastico, anno, sezione, file, frase
+        if($studente != 2){
+            $sql = 'SELECT c.id, anno_scolastico, anno, sezione, file, frase
             from Classe c join Frequenta f on c.id = f.classe left join immagine i on f.classe = i.classe and f.studente = i.studente
             where f.studente ='. $studente;
             $result = $conn->query($sql);
