@@ -19,7 +19,7 @@
                 $pathSrc = 'data:image;base64,'.$row['file'];
             }else{
                 $pathSrc = "../img/Cicciobello.png";
-                $row['frase'] = "fg,ndfghkljfdhjdglkj";
+                $row['frase'] = "Frase non inserita";
             }
             $row['file'] = $pathSrc;
             

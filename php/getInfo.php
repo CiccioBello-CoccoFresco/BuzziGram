@@ -1,7 +1,7 @@
 <?php
     include_once 'utils/dbConnection.php';
     //Query per email, nome, cognome
-    $studente = 1;//temporaneo, sostituire con $_SESSION['user'] quando verrà implementata la session
+    $studente = 3;//temporaneo, sostituire con $_SESSION['user'] quando verrà implementata la session
     $sql = 'SELECT email, nome, cognome FROM utente u join studente s on u.id = s.matricola WHERE matricola ='. $studente;
     $conn = openConn();
     $result = $conn->query($sql);
@@ -20,7 +20,7 @@
             array_push($array,"foto");
             while($row = $result->fetch_assoc()) {
                 if(isset($row['file'])) {
-                    $pathSrc = 'data:image/jpeg;base64,'.base64_encode( $row['file'] );
+                    $pathSrc = 'data:image;base64,'.$row['file'];
                 }else{
                     $pathSrc = "nofoto";
                     $row['frase'] = "Foto non inserita";

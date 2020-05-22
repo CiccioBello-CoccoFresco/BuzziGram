@@ -51,7 +51,7 @@ function caricaDati(){
                     }else{
                         var stringa = stringa + "<img width=180px height=220px src='../../img/Cicciobello.png' class ='foto'>";
                         if(as === calcolaAnnoScolastico()){
-                            var frase = "<a href='../uploadFoto.html?id="+data[4]['id']+"'>Inserisci foto</a>";
+                            var frase = "<a href='../../php/caricaFoto.php?id="+data[4]['id']+"'>Inserisci foto</a>";
                         }else var frase = "foto non inserita";
                         
                         
