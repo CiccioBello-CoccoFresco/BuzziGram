@@ -1,14 +1,14 @@
-import "../css/registrazione.scss";
+import "../css/registrazione.sass";
 //JS
-window.$ = require('../node_modules/jquery/dist/jquery')
+window.$ = require('../node_modules/jquery/dist/jquery');
+import _ from 'lodash';
 require('./mdc_register');
-import classi from "./classi";
-// import img  from "../img/Web 1920 – 1.jpg";
+import classi from "./classiLib";
+import img  from "../img/polaroid.jpg";
 
+$("#sfondo").append('<img src="../assets/'+img+'">').addClass('img').height('auto').width('auto');
+console.log(img);
 $(document).ready(() => { 
-    $('<img src="'+ '../img/Web 1920 – 1.jpg' +'">').load(function() {
-        $(this).width(200).height(200).appendTo('#sfondo');
-    });
     classi.caricaAnni();
 });
 $(document).ready(() => {
