@@ -4,11 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = [{
   entry: {
+    login: "./js/login.js",
     registrazione: './js/registrazione.js',
     classi: './js/classi.js',
+    alunni: "./js/alunni.js",
   },
   output: {
-    filename: 'registrazione.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist/assets'),
   },
   devServer: {
@@ -25,7 +27,7 @@ module.exports = [{
         use: ['file-loader',],
       },
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           {
             loader: 'file-loader',
