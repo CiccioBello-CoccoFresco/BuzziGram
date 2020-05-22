@@ -1,7 +1,7 @@
 <?php
     include_once 'utils/dbConnection.php';
     //Query per email, nome, cognome
-    $studente = 2;//temporaneo, sostituire con $_SESSION['user'] quando verrà implementata la session
+    $studente = 1;//temporaneo, sostituire con $_SESSION['user'] quando verrà implementata la session
     $sql = 'SELECT email, nome, cognome FROM utente u join studente s on u.id = s.matricola WHERE matricola ='. $studente;
     $conn = openConn();
     $result = $conn->query($sql);
