@@ -20,7 +20,7 @@ function caricaAlunni(classe){
             var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
             var pathImg = data[i]['file'];
             var frase = data[i]['frase'];
-            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><img width=600px height=400px src='"+pathImg+"' class ='foto'><div class='desc'>"+frase+"</div></div>";
+            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><img width=180px height=220px src='"+pathImg+"' class ='foto'><div class='desc'>"+frase+"</div></div>";
         }
         $("#container").append(stringa);
         $("#loading").hide();
