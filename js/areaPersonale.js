@@ -7,5 +7,5 @@ import areaPersonale from "./areaPersonaleLib";
 
 $(document).ready(() => {
     areaPersonale.caricaDati();
-    areaPersonale.checkAnno();
+    
 });
