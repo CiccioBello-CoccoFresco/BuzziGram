@@ -12,6 +12,10 @@
 @use "@material/select";
 @use "@material/touch-target/mdc-touch-target";
 @use "@material/touch-target";
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab/mdc-tab";
 
 @include button.core-styles;
 @include icon-button.core-styles;

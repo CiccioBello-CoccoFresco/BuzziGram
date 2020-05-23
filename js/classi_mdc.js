@@ -2,6 +2,9 @@ import {MDCTopAppBar} from '@material/top-app-bar';
 import {MDCSelect} from '@material/select';
 import {MDCRipple} from '@material/ripple';
 import {MDCFloatingLabel} from '@material/floating-label';
+import {MDCTabBar} from '@material/tab-bar';
+
+const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
