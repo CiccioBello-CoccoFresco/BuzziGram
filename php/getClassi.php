@@ -4,7 +4,7 @@
         $as = $_GET["as"];
         if(isset($_GET['mode'])) {
             $mode = $_GET['mode'];
-            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"';
+            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"ORDER BY anno, sezione ASC';
             if($mode === 'biennio') $sql = $sql . "and anno < 3";
             else $sql = $sql . "and anno > 2";
             $conn = openConn();
