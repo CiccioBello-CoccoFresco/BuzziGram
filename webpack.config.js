@@ -8,7 +8,7 @@ module.exports = [{
     registrazione: './js/registrazione.js',
     classi: './js/classi.js',
     alunni: "./js/alunni.js",
-    uploadFoto : "./js/uploadFoto.js"
+    areaPersonale : "./js/areaPersonale.js"
   },
   output: {
     filename: '[name].js',

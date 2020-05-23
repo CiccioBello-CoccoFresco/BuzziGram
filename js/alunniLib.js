@@ -1,6 +1,5 @@
 
 function caricaAlunni(classe){
-    console.log("fdgcxg");
     var obj = {
         classe    : classe
     };
@@ -18,7 +17,6 @@ function caricaAlunni(classe){
         var stringa = "";
         if(data[0] == "norows") stringa = "Nessuno studente trovato per questa classe";
         else{
-            console.log("HO TROVATO DEGLI STUDENTI");
             for(var i=0; i<data.length; i++){
                 var idStud = data[i]['studente'];
                 var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];

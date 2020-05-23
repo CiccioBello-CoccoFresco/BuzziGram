@@ -23,7 +23,7 @@
             echo json_encode($array);
             
         }else{
-            $sql = 'SELECT anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"';
+            $sql = 'SELECT anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"ORDER BY anno, sezione ASC';
             $conn = openConn();
             $result = $conn->query($sql);
             closeConn($conn);

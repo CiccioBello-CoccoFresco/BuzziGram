@@ -94,7 +94,7 @@ function caricaClassiAnnuario(as, mode) {
 
 function caricaClassi(as = calcolaAnnoScolastico()) {
     var classe = document.getElementById("classe");
-    var url = "../../php/getClassi.php?as=" + as;
+    var url = "../php/getClassi.php?as=" + as;
     $.ajax({
         url: url,
         dataType: "json",
