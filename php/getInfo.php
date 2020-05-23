@@ -12,7 +12,7 @@
         array_push($array,$row['email']);
         array_push($array,$row['nome']);
         array_push($array,$row['cognome']);
-        if($studente != 2) array_push($array,"foto");
+        if($studente != 1) array_push($array,"foto");
         else array_push($array,"admin");
     }else array_push($array,"norows");
     closeConn($conn);

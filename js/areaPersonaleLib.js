@@ -46,7 +46,10 @@ function caricaDati(){
             if(data[3]==="foto")  {
                 console.log("Carico le foto");
                 getFoto();
-            }else var stringa = stringa + "<br>IO SONO L'ADMIN";
+            }else{
+                console.log('Admin');
+                zonaAdmin();
+            }
             stringa = stringa + "</div>";
             
         }
@@ -88,11 +91,42 @@ function getFoto(){
             var stringa = stringa + "<div class='desc'>"+frase+"</div></div></div>";
             
         }
+        checkAnno();
         $("#foto").append(stringa);
     })
     .fail(function () {
         console.log("errore");
     })
+}
+
+function zonaAdmin(as = calcolaAnnoScolastico()){
+    var obj = {
+        as    : as,
+    };
+    var url = "../php/adminZone.php?"+$.param(obj);
+    $.ajax({
+        url: url
+        ,dataType: "text"
+        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(textStatus);
+        }
+    })
+    .done(function (data){
+        console.log(data);
+        if(data !== "1"){
+            var stringa = "INSERISCI LE CLASSI DELL'ANNO SCOLASTICO "+as+"<br>(Esempio 1A,2B,3CD,4E....)<br>"+
+            "<form action='../php/insClassi.php?as="+as+"' method='POST'><input type='text' name='classi' id='classi' required><input type='submit' id='bottone' value='Invia'></form>";
+
+            $("#insClasse").append(stringa);
+        }
+    })
+    .fail(function () {
+        console.log("errore");
+    })
+}
+
+function inputClassi(classi){
+    console.log(classi);
 }
 
 function checkAnno(as = calcolaAnnoScolastico()){
@@ -136,4 +170,4 @@ function checkAnno(as = calcolaAnnoScolastico()){
         console.log("errore");
     })
 }
-export default {caricaDati,checkAnno};
+export default {caricaDati,checkAnno,inputClassi};
