@@ -12,20 +12,26 @@
         closeConn($conn);
         // output data of each row
         $array = array();
-        if($result->num_rows === 0) array_push($array,"norows");;
-        while($row = $result->fetch_assoc()) {
-            if(isset($row['file'])) {
-                //$pathSrc = 'data:image/jpeg;base64,'.base64_encode( $row['file'] );
-                $pathSrc = 'data:image;base64,'.$row['file'];
-            }else{
-                $pathSrc = "../img/Cicciobello.png";
-                $row['frase'] = "Frase non inserita";
-            }
-            $row['file'] = $pathSrc;
+        if($result->num_rows === 0) array_push($array,"norows");
+        else{
             
-            array_push($array,$row);
+                while($row = $result->fetch_assoc()) {
+                    if(isset($row['studente'])){
+                        if(isset($row['file'])) {
+                            //$pathSrc = 'data:image/jpeg;base64,'.base64_encode( $row['file'] );
+                            $pathSrc = 'data:image;base64,'.$row['file'];
+                        }else{
+                            $pathSrc = "../img/Cicciobello.png";
+                            $row['frase'] = "Frase non inserita";
+                        }
+                        $row['file'] = $pathSrc;
+                        
+                        array_push($array,$row);
+                    }else array_push($array,"norows");
+                }
+            
+            
         }
-
         echo json_encode($array);
     }
     

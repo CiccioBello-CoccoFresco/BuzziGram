@@ -1,5 +1,6 @@
 
 function caricaAlunni(classe){
+    console.log("fdgcxg");
     var obj = {
         classe    : classe
     };
@@ -15,12 +16,16 @@ function caricaAlunni(classe){
 
 
         var stringa = "";
-        for(var i=0; i<data.length; i++){
-            var idStud = data[i]['studente'];
-            var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
-            var pathImg = data[i]['file'];
-            var frase = data[i]['frase'];
-            stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><img width=180px height=220px src='"+pathImg+"' class ='foto'><div class='desc'>"+frase+"</div></div>";
+        if(data[0] == "norows") stringa = "Nessuno studente trovato per questa classe";
+        else{
+            console.log("HO TROVATO DEGLI STUDENTI");
+            for(var i=0; i<data.length; i++){
+                var idStud = data[i]['studente'];
+                var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
+                var pathImg = data[i]['file'];
+                var frase = data[i]['frase'];
+                stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><img width=180px height=220px src='"+pathImg+"' class ='foto'><div class='desc'>"+frase+"</div></div>";
+            }
         }
         $("#container").append(stringa);
         $("#loading").hide();

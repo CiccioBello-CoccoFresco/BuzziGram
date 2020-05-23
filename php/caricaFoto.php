@@ -26,24 +26,43 @@
         $classe = $_GET['id'];
         echo $classe; 
         $studente = 1;//prendi da sessione
+        $insDate = date("Y-m-d");
         if($_POST['frase']=="") $frase = "Frase predefinita";
         else $frase = $_POST['frase'];
         
-        $sql = "insert into immagine(file,frase,studente,classe) values('".$image."','".$frase."',".$studente.",".$classe.")";
+        $sql = "insert into immagine(file,frase,studente,classe,inserimento) values('".$image."','".$frase."',".$studente.",".$classe.",'".$insDate."')";
         //$result = $conn->query($sql);
         if ($conn->query($sql) === TRUE) {
             echo "FOTO INSERITA CORRETTAMENTE";
-          } else {
+        } else {
+            echo "Errore :".$conn->error;
             echo "Errore nell'inserimento foto, controlla la classe";
-          }
+        }
         closeConn($conn);
     }
 ?>
 
 <html>
-    <form method="post" enctype="multipart/form-data">
-        <input type="file" name = "image" required>
-        <input type="text" name = "frase">
-        <input type="submit" name="submit">
-    </form>
+    <head>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            if(urlParams.has("id")) var classe = urlParams.get("id");
+            else window.location.replace("../dist/Classi.html");
+            /*$('#subBTN').on('click', ()=>{
+                $("#prova").innerHTML("dfgs");
+                $('#form').submit();
+            })*/
+        </script>
+    </head>
+    <body>
+        <a id="prova"></a>
+        <form id="form" action = "#" method="post" enctype="multipart/form-data">
+            <input type="file" name = "image" required>
+            <input type="text" name = "frase">
+            <input type="submit" id ="subBTN" name="submit" value = "Invia">
+        </form>
+    </body>
+    
 </html>
