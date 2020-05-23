@@ -41,11 +41,11 @@ function caricaAnni(){
     })
 }  
 
-function caricaClassiAnnuario(mode, as = calcolaAnnoScolastico()) {
+function caricaClassiAnnuario(anno, as = calcolaAnnoScolastico()) {
     var classe = document.getElementById("classe");
     var obj = {
         as    : as,
-        mode : mode
+        anno : anno
     };
     console.log("../login/getClassi.php?" + $.param(obj));
     var url = "../php/getClassi.php?" + $.param(obj);
@@ -61,8 +61,14 @@ function caricaClassiAnnuario(mode, as = calcolaAnnoScolastico()) {
                 console.log(data);
                 if(data[0] === 'norows') var stringa = "<p>Nessuna classe trovata</p>";
                 else{
-                    if(data[0]['anno'] < 3) var mode = "BIENNIO";
-                    else var mode = "TRIENNIO";
+                    /* 
+                    data[index][attributo]
+                    index = penso tu sappia cos'è un indice per scorrere un array
+                    attributo:
+                        id : id della classe, usalo come parametro nel link ad Alunni.php?id=
+                        anno : anno della classe(prima, seconda, terza, quarta, quinta)
+                        sezione : chissà cos'è la sezione
+                    */
                     var stringa = "<table id='tabella' border = '1px'><th colspan = 4>"+mode+"</th>";
                     var rows = parseInt(data.length/4);
                     var resto = parseInt(data.length%4);

@@ -2,11 +2,9 @@
     include_once './Utils/dbConnection.php';
     if(isset($_GET['as'])){
         $as = $_GET["as"];
-        if(isset($_GET['mode'])) {
-            $mode = $_GET['mode'];
-            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '"ORDER BY anno, sezione ASC';
-            if($mode === 'biennio') $sql = $sql . "and anno < 3";
-            else $sql = $sql . "and anno > 2";
+        if(isset($_GET['anno'])) {
+            $anno = $_GET['anno'];
+            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . ' and anno ='.$anno.'ORDER BY anno, sezione ASC';
             $conn = openConn();
             $result = $conn->query($sql);
             closeConn($conn);
@@ -19,7 +17,7 @@
                     array_push($array,$row);
                 }
             }
-            var_dump($array);
+            //var_dump($array);
             echo json_encode($array);
             
         }else{
