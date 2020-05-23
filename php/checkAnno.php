@@ -1,7 +1,7 @@
 <?php
     include_once 'utils/dbConnection.php';
     if(isset($_GET['as'])){
-        $as = $_GET["as"];
+        $as = "20/21";//$_GET["as"];
         $studente = 1;
         $sql = 'Select c.id from classe c join frequenta f on c.id = f.classe where c.anno_scolastico ="'.$as.'" and f.studente = '.$studente; 
         $conn = openConn();

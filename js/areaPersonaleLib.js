@@ -40,32 +40,52 @@ function caricaDati(){
             "<br>Email :"+ data[0]+
             "<br>Cognome :"+ data[2]+
             "<br>Nome :"+ data[1];
+            
             $("#info").append(stringa);
-            stringa = "";
-            if(data[3]==="foto"){
-                stringa += "<br><div>";
-                for(var i=4; i<data.length; i++){
-                    var as = data[i]['anno_scolastico'];
-                    var anno = data[i]['anno'];
-                    var sezione = data[i]['sezione'];
-                    var pathImg = data[i]['file'];
-                    var stringa = stringa + "<div class='gallery'><div class='desc'>"+as+"<br>"+anno+" "+sezione+"</div>";
-                    if(pathImg != "nofoto"){
-                        var frase = data[i]['frase'];
-                        var stringa = stringa + "<img width=180px height=220px src='"+pathImg+"'class ='foto'>";
-                    }else{
-                        var stringa = stringa + "<img width=180px height=220px src='../img/Cicciobello.png' class ='foto'>";
-                        if(as === calcolaAnnoScolastico()){
-                            var frase = "<a href='../../php/caricaFoto.php?id="+data[4]['id']+"'>Inserisci foto</a>";
-                        }else var frase = "foto non inserita";
-                        
-                        
-                    }
-                    var stringa = stringa + "<div class='desc'>"+frase+"</div></div></div>"
-                    //stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><img src='"+pathImg+"'class ='foto'><div class='desc'>"+frase+"</div></div>";
-                }
+            //stringa = "";
+            if(data[3]==="foto")  {
+                console.log("Carico le foto");
+                getFoto();
             }else var stringa = stringa + "<br>IO SONO L'ADMIN";
-            var stringa = stringa + "</div>";
+            stringa = stringa + "</div>";
+            
+        }
+        
+    })
+    .fail(function () {
+        console.log("errore");
+    })
+}
+
+function getFoto(){
+    var url = "../php/getFoto.php";
+    $.ajax({
+        url: url
+        ,dataType: "json"
+        ,error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log("ERRORE");
+        }
+    })
+    .done(function (data){
+        console.log(data.length);
+        var stringa = "";
+        stringa += "<br><div>";
+        for(var i=0; i<data.length; i++){
+            var as = data[i]['anno_scolastico'];
+            var anno = data[i]['anno'];
+            var sezione = data[i]['sezione'];
+            var pathImg = data[i]['file'];
+            var stringa = stringa + "<div class='gallery'><div class='desc'>"+as+"<br>"+anno+" "+sezione+"</div>";
+            if(pathImg != "nofoto"){
+                var frase = data[i]['frase'];
+                var stringa = stringa + "<img width=180px height=220px src='"+pathImg+"'class ='foto'>";
+            }else{
+                var stringa = stringa + "<img width=180px height=220px src='../img/Cicciobello.png' class ='foto'>";
+                if(as === calcolaAnnoScolastico()){
+                    var frase = "<a href='../php/caricaFoto.php?id="+data[i]['id']+"'>Inserisci foto</a>";
+                }else var frase = "foto non inserita";   
+            }
+            var stringa = stringa + "<div class='desc'>"+frase+"</div></div></div>";
             
         }
         $("#foto").append(stringa);
@@ -74,8 +94,6 @@ function caricaDati(){
         console.log("errore");
     })
 }
-
-
 
 function checkAnno(as = calcolaAnnoScolastico()){
     var obj = {

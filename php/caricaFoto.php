@@ -3,20 +3,27 @@
     if(isset($_POST['submit']) && isset($_GET['id']) ){
         if(getimagesize($_FILES['image']['tmp_name']) == FALSE) echo 'Inserisci immagine';
         else{
-            //query per vedere se ha già inserito foto per la classe
-            $id = $_GET['id'];
-            $studente = 1;//da prendere da session
-            $sql = "SELECT frase from immagine i left join frequenta f on i.classe = f.classe and i.studente = f.studente where i.studente =".$studente." and i.classe =".$id;
-            $conn = openConn();
-            $result = $conn->query($sql);
-            closeConn($conn);
-            $row = $result->fetch_assoc();
-            if(isset($row['frase'])) echo "E' stata già inserita una foto per questo studente nella classe indicata";
+            $name = addslashes($_FILES['image']['name']);
+            $whatIWant = substr($name, strpos($name, ".") + 1);
+            //echo $whatIWant;
+            if($whatIWant !== "jpeg" || $whatIWant !== "jpg") echo 'formato non valido, si prega di inserire un file .jpg o .jpeg';
             else{
-                $image = addslashes($_FILES['image']['tmp_name']);
-                $image = file_get_contents($image);
-                $image = base64_encode($image);
-                saveImage($image);
+                //query per vedere se ha già inserito foto per la classe
+                $id = $_GET['id'];
+                $studente = 1;//da prendere da session
+                $sql = "SELECT frase from immagine i left join frequenta f on i.classe = f.classe and i.studente = f.studente where i.studente =".$studente." and i.classe =".$id;
+                $conn = openConn();
+                $result = $conn->query($sql);
+                closeConn($conn);
+                $row = $result->fetch_assoc();
+                if(isset($row['frase'])) echo "E' stata già inserita una foto per questo studente nella classe indicata";
+                else{
+                    $image = addslashes($_FILES['image']['tmp_name']);
+                    $image = file_get_contents($image);
+                    
+                    $image = base64_encode($image);
+                    saveImage($image);
+                }
             }
         }
         
