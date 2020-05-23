@@ -8,7 +8,6 @@ let mode = 'biennio';
 
 $(document).ready(() => {
     $(function() {
-        console.log('WE');
         classi.caricaAnni();  
     });
     $("#as").on("change", function(){
