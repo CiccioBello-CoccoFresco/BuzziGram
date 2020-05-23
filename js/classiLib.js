@@ -13,7 +13,7 @@ function calcolaAnnoScolastico() {
 }
 
 function caricaAnni(){
-    var url = "../../php/getAnni.php";
+    var url = "../php/getAnni.php";
     $.ajax({
         url: url,
         dataType: "json",
@@ -40,14 +40,14 @@ function caricaAnni(){
     })
 }  
 
-function caricaClassiAnnuario(as, mode) {
+function caricaClassiAnnuario(mode, as = calcolaAnnoScolastico()) {
     var classe = document.getElementById("classe");
     var obj = {
         as    : as,
         mode : mode
     };
     console.log("../login/getClassi.php?" + $.param(obj));
-    var url = "../../php/getClassi.php?" + $.param(obj);
+    var url = "../php/getClassi.php?" + $.param(obj);
         $.ajax({
             url: url
             ,dataType: "json"
@@ -94,7 +94,7 @@ function caricaClassiAnnuario(as, mode) {
 
 function caricaClassi(as = calcolaAnnoScolastico()) {
     var classe = document.getElementById("classe");
-    var url = "../../php/getClassi.php?as=" + as;
+    var url = "../php/getClassi.php?as=" + as;
     $.ajax({
         url: url,
         dataType: "json",
