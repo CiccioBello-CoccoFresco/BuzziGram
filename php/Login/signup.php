@@ -1,6 +1,6 @@
 <head>
     <?php
-        include_once '../utils/dbConnection.php';
+        include_once '../Utils/dbConnection.php';
     ?>
 </head>
 <?php

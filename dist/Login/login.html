@@ -2,23 +2,67 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../../css/login.sass"> 
+	<link rel="stylesheet" type="text/css" href="../assets/login.css"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 </head>
-	<body>
+	<body class="mdc-typography">
+		<div class="mdc-layout-grid">
+			<div class="mdc-layout-grid__inner">
+				<div class="mdc-layout-grid__cell--span-7">
+					<div id='img'>
 
-		<div class="login">
-			<header class="header">
-				<span class="text">LOGIN</span>
-				<span class="loader"></span>
-			</header>
-			<form class="form" action="../../php/Login/login.php" method="post">  
-				<input class="input" type="text" name="email" placeholder="email" required>
-				<input class="input" type="password" name="psw" placeholder="Password" required>
-				<button class="btn" type="submit"></button>
-            </form>
-            Non sei registrato?<a href="registrazione.html">Registrati</a> 
+					</div>
+				</div>
+				<div class="mdc-layout-grid__cell--span-5">
+					<div class="mdc-layout-grid__inner">
+						<div class="mdc-layout-grid__cell--span-12">
+						<h2 class="mdc-typography--headline2">
+							<span class="text">LOGIN</span>
+						</h2>
+						<form class="mdc-layout-grid__inner" action="../../php/Login/login.php" method="post">  
+							<div class="mdc-layout-grid__cell--span-12">
+								<label class="mdc-text-field mdc-text-field--outlined">
+									<input type="text" name="email" class="mdc-text-field__input" aria-labelledby="my-label-id" required>
+									<span class="mdc-notched-outline">
+									  <span class="mdc-notched-outline__leading"></span>
+									  <span class="mdc-notched-outline__notch">
+										<span class="mdc-floating-label" id="my-label-id">Email</span>
+									  </span>
+									  <span class="mdc-notched-outline__trailing"></span>
+									</span>
+								  </label>
+							</div>
+							<div class="mdc-layout-grid__cell--span-12">
+								<label class="mdc-text-field mdc-text-field--outlined">
+									<input type="password" name="psw" class="mdc-text-field__input" aria-labelledby="my-label-id" required>
+									<span class="mdc-notched-outline">
+									  <span class="mdc-notched-outline__leading"></span>
+									  <span class="mdc-notched-outline__notch">
+										<span class="mdc-floating-label" id="my-label-id">Password</span>
+									  </span>
+									  <span class="mdc-notched-outline__trailing"></span>
+									</span>
+								  </label>
+							</div>
+							<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+								<div class="mdc-form-field mdc-touch-target-wrapper mdc-typography--button">
+									<button id="sub" class="mdc-button mdc-button--touch mdc-button--raised">
+									<div class="mdc-button__ripple"></div>
+										<span class="mdc-button__label">Accedi</span>
+									<div class="mdc-button__touch"></div>
+									</button>
+								</div>
+							</div>
+							<div class="label mdc-layout-grid__cell--span-12">
+								Non sei registrato?<a href="registrazione.html">Registrati</a> 
+							</div>
+						</form>
+						</div>
+						</div>
+					</div>
+				</div>
 			</div>
-
-							
+		</div>
+		<script src="../assets/login.js"></script>				
 	</body>
 </html>

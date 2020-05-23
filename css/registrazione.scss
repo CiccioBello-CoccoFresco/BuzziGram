@@ -1,8 +1,4 @@
-@use "@material/theme" with ( 
-  $primary: #006d05, 
-  $secondary: #000000, 
-  $background: rgb(23, 85, 26)
-);
+@use 'theme';
 @use "@material/textfield";
 @use "@material/form-field/mdc-form-field";
 @use "@material/checkbox/mdc-checkbox";
@@ -19,12 +15,12 @@
 @use "@material/menu/mdc-menu";
 @use "@material/select/mdc-select";
 
+@include button.core-styles;
+@include textfield.core-styles;
+
 .demo-width-class {
   width: 400px;
 }
-
-@include button.core-styles;
-@include textfield.core-styles;
 
 .my-image-list {
   @include image-list.standard-columns(1)

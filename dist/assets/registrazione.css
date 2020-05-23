@@ -3715,10 +3715,6 @@ a.mdc-list-item {
     transform: translateX(calc(0 - -32px)) translateY(-34.75px) scale(0.75);
   }
 }
-.demo-width-class {
-  width: 400px;
-}
-
 .mdc-button {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -5253,6 +5249,10 @@ svg.mdc-button__icon {
 [dir=rtl] .mdc-text-field--ltr-text.mdc-text-field--end-aligned .mdc-text-field__affix--suffix, .mdc-text-field--ltr-text.mdc-text-field--end-aligned[dir=rtl] .mdc-text-field__affix--suffix {
   /* @noflip */
   padding-left: 2px;
+}
+
+.demo-width-class {
+  width: 400px;
 }
 
 .my-image-list .mdc-image-list__item {
