@@ -13,9 +13,6 @@
             $row = $result->fetch_assoc();
             if(isset($row['frase'])) echo "E' stata già inserita una foto per questo studente nella classe indicata";
             else{
-
-                
-
                 $image = addslashes($_FILES['image']['tmp_name']);
                 $image = file_get_contents($image);
                 $image = base64_encode($image);
@@ -26,15 +23,19 @@
     }
     function saveImage($image){
         $conn = openConn();
-        $classe = $_GET['id']; 
+        $classe = $_GET['id'];
+        echo $classe; 
         $studente = 1;//prendi da sessione
         if($_POST['frase']=="") $frase = "Frase predefinita";
         else $frase = $_POST['frase'];
         
         $sql = "insert into immagine(file,frase,studente,classe) values('".$image."','".$frase."',".$studente.",".$classe.")";
-        $result = $conn->query($sql);
-        if($result) echo 'Foto caricata';
-        else echo $sql;
+        //$result = $conn->query($sql);
+        if ($conn->query($sql) === TRUE) {
+            echo "FOTO INSERITA CORRETTAMENTE";
+          } else {
+            echo "Errore nell'inserimento foto, controlla la classe";
+          }
         closeConn($conn);
     }
 ?>
