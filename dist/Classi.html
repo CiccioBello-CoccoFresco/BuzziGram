@@ -5,8 +5,8 @@
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://kit.fontawesome.com/d21dff40a1.js" crossorigin="anonymous"></script>
     </head>
-
     <body>
         <header class="nav mdc-top-app-bar">
         <div class="fit-to-parent mdc-top-app-bar__row">
@@ -37,23 +37,69 @@
         </header>
         <div id="annuario">
             <div class="mdc-tab-bar" role="tablist">
-            <div class="mdc-tab-scroller">
-                <div class="mdc-tab-scroller__scroll-area">
-                <div class="mdc-tab-scroller__scroll-content">
-                    <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                    <span class="mdc-tab__content">
-                        <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
-                        <span class="mdc-tab__text-label">Favorites</span>
-                    </span>
-                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                    </button>
+                <div class="mdc-tab-scroller">
+                  <div class="mdc-tab-scroller__scroll-area">
+                    <div class="mdc-tab-scroller__scroll-content">
+                      <button id='prime' class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon fas fa-dice-one" aria-hidden="true"></span>
+                            <span class="mdc-tab__text-label"> Prime </span>
+                            <span class="icon mdc-tab__icon material-icons" aria-hidden="true">child_care</span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                      </button>
+                      <button id='seconde' class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="-1">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon fas fa-dice-two" aria-hidden="true"></span>
+                          <span class="mdc-tab__text-label"> Seconde </span>
+                          <span class="icon mdc-tab__icon fas fa-pray" aria-hidden="true"></span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                      </button>
+                      <button id='terze' class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="-1">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon fas fa-dice-three" aria-hidden="true"></span>
+                          <span class="mdc-tab__text-label"> Terze </span>
+                          <span class="icon mdc-tab__icon fas fa-walking" aria-hidden="true"></span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                      </button>
+                      <button id='quarte' class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="-1">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon fas fa-dice-four" aria-hidden="true"></span>
+                          
+                          <span class="mdc-tab__text-label"> Quarte </span>
+                          <span class="icon mdc-tab__icon fas fa-wheelchair" aria-hidden="true"></span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                      </button>
+                      <button id='quinte' class="mdc-tab mdc-tab" role="tab" aria-selected="true" tabindex="-1">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__icon fas fa-dice-five" aria-hidden="true"></span>
+                            <span class="mdc-tab__text-label"> Quinte </span>
+                            <span class="icon mdc-tab__icon fab fa-accessible-icon" aria-hidden="true"></span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator-">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                </div>
-            </div>
-            </div>
+              </div>
         </div>
         <script src="assets/classi.js" async></script>
     </body>
