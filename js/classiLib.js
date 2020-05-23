@@ -27,20 +27,14 @@ function caricaAnni(){
 
         for(var i = 0; i<data.length; i++){
             var anno = data[i]["anno_scolastico"];
-            if(i === 0){
-                console.log('here');
-                stringa = stringa + '<li class="mdc-list-item mdc-list-item--selected" data-value="'+ anno +'" aria-selected="true">';
-            } else {
-                console.log('here2');
-                stringa = stringa + '<li class="mdc-list-item mdc-list-item" data-value="'+ anno +'">';
-            }
+            stringa = stringa + '<li class="mdc-list-item mdc-list-item" data-value="'+ anno +'">';
             stringa += '<span class="mdc-list-item__text">'+ anno +  "</span></li>";
         }
 
         console.log(stringa);
         $("#anni").append(stringa);
         var temp=calcolaAnnoScolastico();
-        $("#anni").val(temp);
+        $("#dropdown").val(temp);
 
     }).fail(function () {
         console.log("errore");

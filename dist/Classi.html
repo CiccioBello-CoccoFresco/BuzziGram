@@ -3,34 +3,13 @@
         <title>Classi</title> 	
         <link rel="stylesheet" type="text/css" href="assets/classi.css">
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">	
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
 
     <body>
-        <nav class="navbar">
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo" style="margin-left: 10px;">Buzzigram</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="scelta">
-                        <div class="dropdown">
-                                <select id="as" name="as" class='dropdown-trigger btn'>     
-                                    <ul id='dropdown1' class='dropdown-content'></ul>
-                                </select>
-                        </div>
-                        
-                    </li>
-                    <li>
-                        <button class="btn" id="biennio">BIENNIO</button> <button class="btn" id="triennio">TRIENNIO</button>
-                    </li>
-                    <li>
-                        <a href="AreaPersonale/AreaPersonale.html">N.Cognome</a>
-                    </li>
-                </ul>
-            </div>
-          </nav>
-        <header class="mdc-top-app-bar">
-        <div class="mdc-top-app-bar__row">
+        <header class="nav mdc-top-app-bar">
+        <div class="fit-to-parent mdc-top-app-bar__row">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                 <span class="mdc-top-app-bar__title">Buzzigram</span>
             </section>
@@ -40,34 +19,23 @@
                         <span class="mdc-select__ripple"></span>
                         <input type="text" disabled readonly class="mdc-select__selected-text">
                         <i class="mdc-select__dropdown-icon"></i>
-                        <span class="mdc-floating-label">Anno scolatico</span>
+                        <span class="mdc-floating-label"> Anno Scolastico </span>
                         <span class="mdc-line-ripple"></span>
                     </div>
-                    
                     <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
                         <ul class="mdc-list">
-                            <span id="anni"></span>
+                            <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option"></li>
+                            <span id='anni'></span>
                         </ul>
-                    </div>
+                      </div>
                 </div>
                 <div class="mdc-touch-target-wrapper">
-                    <button class="btn mdc-button mdc-button--outlined mdc-button--touch">
-                      <div class="mdc-button__ripple"></div>
-                      <span class="mdc-button__label"> Biennio </span>
-                      <div class="mdc-button__touch"></div>
-                    </button>
-                </div>
-                <div class="mdc-touch-target-wrapper">
-                    <button class="btn mdc-button mdc-button--outlined mdc-button--touch">
-                      <div class="mdc-button__ripple"></div>
-                      <span class="mdc-button__label">Triennio</span>
-                      <div class="mdc-button__touch"></div>
-                    </button>
+                    <span id='ap' class="mdc-icon-button material-icons"> person </span>
                 </div>
             </section>
         </div>
         </header>
-        <div id = "annuario">
+        <div id="annuario">
             
         </div>
         <script src="assets/classi.js" async></script>
