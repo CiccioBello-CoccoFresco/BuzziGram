@@ -1,43 +1,10 @@
 <html>
     <head>
-        <title>Classi</title>
-        <script src="assets/registrazione.js" async></script> 	
+        <title>Classi</title> 	
         <link rel="stylesheet" type="text/css" href="assets/classi.css">
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">	
-        <script type="text/javascript">
-            
-            $(document).ready(() => {
-                var mode = "biennio";
-                $(function() {
-                    caricaAnni();
-                    
-                    
-                });
-                $("#as").on("change", function(){
-                    var annoSelezionato = $(this).children("option:selected").val();
-                    //$("#annoSelezionato").innerHTML = annoSelezionato;
-                    caricaClassiAnnuario(annoSelezionato, mode);
-                });
-                
-                /*$(function() {
-                    
-                });*/
-
-                $("#biennio").on("click", function(){
-                    var annoSelezionato = $("#as").children("option:selected").val();
-                    var mode = "biennio";
-                    caricaClassiAnnuario(annoSelezionato, mode);
-                });
-                $("#triennio").on("click", function(){
-                    var annoSelezionato = $("#as").children("option:selected").val();
-                    var mode = "triennio";
-                    caricaClassiAnnuario(annoSelezionato, mode);
-                });
-            });
-
-
-        </script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     </head>
 
     <body>
@@ -47,11 +14,6 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="scelta">
                         <div class="dropdown">
-                            <!-- Dropdown Trigger 
-                            <a class='dropdown-trigger btn' id="annoSelezionato" data-target='dropdown1'></a>-->
-
-                            <!-- Dropdown Structure -->
-                            
                                 <select id="as" name="as" class='dropdown-trigger btn'>     
                                     <ul id='dropdown1' class='dropdown-content'></ul>
                                 </select>
@@ -67,8 +29,47 @@
                 </ul>
             </div>
           </nav>
+        <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <span class="mdc-top-app-bar__title">Buzzigram</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <div class="scelta mdc-select">
+                    <div class="mdc-select__anchor demo-width-class">
+                        <span class="mdc-select__ripple"></span>
+                        <input type="text" disabled readonly class="mdc-select__selected-text">
+                        <i class="mdc-select__dropdown-icon"></i>
+                        <span class="mdc-floating-label">Anno scolatico</span>
+                        <span class="mdc-line-ripple"></span>
+                    </div>
+                    
+                    <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                        <ul class="mdc-list">
+                            <span id="here"></span>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mdc-touch-target-wrapper">
+                    <button class="btn mdc-button mdc-button--outlined mdc-button--touch">
+                      <div class="mdc-button__ripple"></div>
+                      <span class="mdc-button__label"> Biennio </span>
+                      <div class="mdc-button__touch"></div>
+                    </button>
+                </div>
+                <div class="mdc-touch-target-wrapper">
+                    <button class="btn mdc-button mdc-button--outlined mdc-button--touch">
+                      <div class="mdc-button__ripple"></div>
+                      <span class="mdc-button__label">Triennio</span>
+                      <div class="mdc-button__touch"></div>
+                    </button>
+                </div>
+            </section>
+        </div>
+        </header>
         <div id = "annuario">
             
         </div>
+        <script src="assets/classi.js" async></script>
     </body>
 </html>

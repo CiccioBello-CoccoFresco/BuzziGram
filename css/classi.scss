@@ -1,25 +1,42 @@
+@use 'theme';
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/select/mdc-select";
+@use "@material/button";
+
+@include button.core-styles;
+@include icon-button.core-styles;
+
 * {
-    margin: 0;
-    padding: 0;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    user-select:none;
-  }
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  user-select:none;
+}
+
+.demo-width-class {
+  height: 36px;
+  width: 50px;
+}
   
-  body {
-    /*background-image: url("../img/img2.jpg");*/
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font: 100%/1 'Lobster', cursive;
-  }
+body {
+  /*background-image: url("../img/img2.jpg");*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font: 100%/1 'Lobster', cursive;
+}
 
 .navbar {
-    background-color: lightgreen;
+  background-color: lightgreen;
 }
 
 .scelta{
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 /* Style The Dropdown Button */
