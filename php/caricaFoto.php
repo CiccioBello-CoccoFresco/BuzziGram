@@ -35,7 +35,6 @@
     function saveImage($image){
         $conn = openConn();
         $classe = $_GET['id'];
-        echo $classe; 
         $studente = $_SESSION['user'];
         $insDate = date("Y-m-d");
         if($_POST['frase']=="") $frase = "Frase predefinita";
