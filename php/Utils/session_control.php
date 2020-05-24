@@ -38,7 +38,7 @@
         } else {
             // session_start();
             echo 'Cookie Scaduto';
-            var_dump($_SESSION);
+            //var_dump($_SESSION);
             return false;
         }
     }
