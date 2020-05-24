@@ -38,12 +38,12 @@ function caricaDati(){
         else{
             if(data[0]=="norows") var stringa  = "Non sono state trovate informazioni";
             else{
-                var stringa = "<div>INFORMAZIONI PERSONALI"+
-                "<br>Email :"+ data[0]+
-                "<br>Cognome :"+ data[2]+
-                "<br>Nome :"+ data[1];
+                var stringa = '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline4">INFORMAZIONI PERSONALI</span></div>'+
+                '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Email: </span><span>'+ data[0]+ '</span></div>'+ 
+                '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Cognome: </span><span>'+ data[2]+ '</span></div>'+ 
+                '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Nome: </span><span>'+ data[1] + '</span></div>';
                 
-                $("#info").append(stringa);
+                $("#info").html(stringa);
                 //stringa = "";
                 if(data[3]==="foto")  {
                     console.log("Carico le foto");

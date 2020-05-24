@@ -1,15 +1,34 @@
 <html>
     <head>
-        <!--<link rel="stylesheet" type="text/css" href="assets/alunni.css">-->
+        <link rel="stylesheet" type="text/css" href="assets/areaPersonale.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar">
+            <div class="fit-to-parent mdc-top-app-bar__row">
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button id='back' class="icon material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Indietro">arrow_back</button>
+              </section>
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <span class=""> Area Personale </span>
+              </section>
+            </div>
+        </header>
+        <div id="main">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell--span-5">
+                        <div id='info' class="mdc-layout-grid__inner">
+        
+                            <div id="insClasse" class="mdc-layout-grid__cell">
 
-
-    <body>
-        <div id="info">
-        </div>
-        <div id="foto">
-        </div>
-        <div id="insClasse">
+                            </div>
+                        </div>
+                    </div>
+                    <div id='foto' class="mdc-layout-grid__cell--span-7"></div>
+                </div>
+            </div>
         </div>
         <script src="assets/areaPersonale.js"></script>  
     </body>
