@@ -11,5 +11,6 @@ classi.caricaClassi();
 
 $('#sub').on('click', ()=>{
     $('#as').val(classi.calcolaAnnoScolastico());
-    $('#submittami').submit();
+    console.log($('as').val());
+    //$('#submittami').submit();
 })
