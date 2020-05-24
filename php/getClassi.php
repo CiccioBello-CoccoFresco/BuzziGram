@@ -13,8 +13,11 @@
             if($result->num_rows == 0){
                 array_push($array, "norows");
             }else{
-                while($row = $result->fetch_assoc()) {
-                    array_push($array,$row);
+                if(!isset($row['id'])) array_push($array, "norows");
+                else{
+                    while($row = $result->fetch_assoc()) {
+                        array_push($array,$row);
+                    }
                 }
             }
             //var_dump($array);
