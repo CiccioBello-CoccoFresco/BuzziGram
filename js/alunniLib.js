@@ -24,15 +24,15 @@ function caricaAlunni(classe){
                 var frase = data[i]['frase'];
                 
                 stringa = stringa +
-                    '<li class="mdc-image-list__item">' +
-                    '<img class="mdc-image-list__image" src="'+ pathImg+'">' +
-                    '<div class="mdc-image-list__supporting">' +
-                    '<span class="mdc-image-list__label"><b>'+ cognomeNomeStud +'</b></span><br>' +
-                    '<span class="mdc-image-list__label"><i>'+ frase +'</i></span></div></li>';
+                    '<div class="mdc-layout-grid__cell"><div class="mdc-card my-card"><div class="fit-to-parent mdc-card__primary-action demo-card__primary-action" tabindex="0">' +
+                    '<div class="mdc-card__media mdc-card__media--16-9 demo-card__media" style="background-image: url('+ pathImg +');"></div>' +
+                    '<div class="demo-card__primary">' +
+                    '<h2 class="demo-card__title mdc-typography mdc-typography--headline6"><b>'+ cognomeNomeStud +'</b></h2></div>' +
+                    '<div class="demo-card__secondary mdc-typography mdc-typography--body2"><i>'+ frase +'</i></div></div></div></div>';
             }
         }
         console.log(stringa);
-        $("#container").html(stringa);
+        $("#divpos").html(stringa);
         $("#loading").hide();
 
 

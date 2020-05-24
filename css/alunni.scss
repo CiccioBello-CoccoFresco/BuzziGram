@@ -2,16 +2,51 @@
 @use "@material/top-app-bar/mdc-top-app-bar";
 @use "@material/top-app-bar";
 @use "@material/icon-button";
-@use "@material/image-list/mdc-image-list";
-@use "@material/image-list";
+@use "@material/card/mdc-card";
+@use "@material/card";
+@use "@material/typography/mdc-typography";
+@use "@material/typography";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/layout-grid";
 
 @include icon-button.core-styles;
+@include card.core-styles;
 
 header{
   top: 0px;
   right: 0px;
   left: 0px;
   height: 15%;
+}
+
+.my-card {
+  height: 75vh;
+  width: 25vw;
+}
+
+.card-header {
+  margin: 1.25rem 0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.card-header h2,
+.card-header h3 {
+  margin: 0;
+}
+
+.card-icon {
+  padding-right: 8px;
+}
+
+.mdc-card__media {
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.card-body {
+  padding: 16px;
 }
 
 .fit-to-parent{
@@ -27,9 +62,14 @@ header{
   vertical-align: middle;
 }
 
-.my-image-list {
-  @include image-list.standard-columns(5);
+.demo-card__title{
+  margin-left: 10px;
 }
+
+.demo-card__secondary{
+  margin-left: 10px;
+}
+
 /**
 body
     background-repeat: no-repeat

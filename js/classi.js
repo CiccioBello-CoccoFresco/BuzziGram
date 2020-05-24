@@ -5,7 +5,6 @@ import classi from "./classiLib";
 import as from './classi_mdc';
 
 
-
 $(document).ready(() => {
     // set tab margin to match header 
     var h = $('header').height();

@@ -18,7 +18,6 @@
         $email = $_POST['email'];
         $psw = md5($_POST['psw']);
         $as = $_POST['as'];
-        isset($_POST['rap']) ? $rap = 1 : $rap = 0;
         $conn = openConn();
         $conn->begin_transaction();
         $stmt = $conn->prepare('insert into studente(nome, cognome) values (?,?)');
@@ -35,8 +34,8 @@
         $app=$stmt->execute();
         if(!$app) $conn->rollback();
         $idClasse = $stmt->get_result()->fetch_row()[0];
-        $stmt = $conn->prepare('insert into frequenta values (?,?,?)');
-        $stmt->bind_param("iii", $idStudente, $idClasse, $rap);
+        $stmt = $conn->prepare('insert into frequenta values (?,?)');
+        $stmt->bind_param("ii", $idStudente, $idClasse);
         $app=$stmt->execute();
         if(!$app) $conn->rollback();
         $fin = $conn->commit();
