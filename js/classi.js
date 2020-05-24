@@ -21,7 +21,9 @@ $(document).ready(() => {
     $(function() {
         classi.caricaAnni();  
     });
-
+    $('#ap').on("click", ()=>{
+        window.location = "./AreaPersonale.html"
+    })
     $("#tabs").on("MDCTabBar:activated", function(){
         anno = as.tabBar.foundation_.adapter_.getFocusedTabIndex() + 1;
         console.log(anno+ " " +ascol);
