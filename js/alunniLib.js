@@ -15,7 +15,8 @@ function caricaAlunni(classe){
 
 
         var stringa = "";
-        if(data[0] == "norows") stringa = "Nessuno studente trovato per questa classe";
+        if(data == "redirect") window.location.replace("../dist/login.html");
+        else if(data[0] == "norows") stringa = "Nessuno studente trovato per questa classe";
         else{
             for(var i=0; i<data.length; i++){
                 var idStud = data[i]['studente'];

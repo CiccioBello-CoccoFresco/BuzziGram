@@ -24,18 +24,19 @@ function caricaAnni(){
 
         //console.log(data);
         var stringa = '';
+        if(data['0'] == "redirect") window.location.replace("../dist/login.html");
+        else{
+            for(var i = 0; i<data.length; i++){
+                var anno = data[i]["anno_scolastico"];
+                if(anno === calcolaAnnoScolastico()) stringa = stringa + '<li class="mdc-list-item mdc-list-item mdc-list-item--selected" data-value="'+ anno +'" aria-selected="true">';
+                else stringa = stringa + '<li class="mdc-list-item mdc-list-item" data-value="'+ anno +'">';
+                stringa += '<span class="mdc-list-item__text">'+ anno +  "</span></li>";
+            }
 
-        for(var i = 0; i<data.length; i++){
-            var anno = data[i]["anno_scolastico"];
-            if(anno === calcolaAnnoScolastico()) stringa = stringa + '<li class="mdc-list-item mdc-list-item mdc-list-item--selected" data-value="'+ anno +'" aria-selected="true">';
-            else stringa = stringa + '<li class="mdc-list-item mdc-list-item" data-value="'+ anno +'">';
-            stringa += '<span class="mdc-list-item__text">'+ anno +  "</span></li>";
+            $("#anni").append(stringa);
+            var temp=calcolaAnnoScolastico();
+            $("#dropdown").val(temp);
         }
-
-        $("#anni").append(stringa);
-        var temp=calcolaAnnoScolastico();
-        $("#dropdown").val(temp);
-
     }).fail(function () {
         console.log("errore");
     })
