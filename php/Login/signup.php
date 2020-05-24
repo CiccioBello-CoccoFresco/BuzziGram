@@ -17,7 +17,7 @@
         if(strlen($classe) === 3) $sezione = $sezione . $classe[2];
         $email = $_POST['email'];
         $psw = md5($_POST['psw']);
-        $as = '2019/2020';
+        $as = $_POST['as'];
         isset($_POST['rap']) ? $rap = 1 : $rap = 0;
         $conn = openConn();
         $conn->begin_transaction();
