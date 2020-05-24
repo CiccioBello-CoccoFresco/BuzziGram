@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <script src="https://kit.fontawesome.com/d21dff40a1.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="mdc-typography">
         <header class="nav mdc-top-app-bar">
         <div class="fit-to-parent mdc-top-app-bar__row">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -19,12 +19,11 @@
                         <span class="mdc-select__ripple"></span>
                         <input type="text" disabled readonly class="mdc-select__selected-text">
                         <i class="mdc-select__dropdown-icon"></i>
-                        <span class="mdc-floating-label"> Anno Scolastico </span>
+                        <span class="mdc-floating-label mdc-floating-label--float-above"> Anno Scolastico </span>
                         <span class="mdc-line-ripple"></span>
                     </div>
                     <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
                         <ul class="mdc-list">
-                            <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option"></li>
                             <span id='anni'></span>
                         </ul>
                       </div>
@@ -35,6 +34,7 @@
             </section>
         </div>
         </header>
+        <div id='annuario'>
         <div id="tabs">
             <div class="mdc-tab-bar" role="tablist">
                 <div class="mdc-tab-scroller">
@@ -101,8 +101,12 @@
                 </div>
               </div>
         </div>
-        <div id="classi">
-          
+        <section id="classi">
+          <div class="mdc-layout-grid">
+            <div id="classes" class="mdc-layout-grid__inner">
+            </div>
+          </div> 
+        </section>
         </div>
         <script src="assets/classi.js" async></script>
     </body>

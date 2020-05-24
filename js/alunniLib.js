@@ -22,10 +22,17 @@ function caricaAlunni(classe){
                 var cognomeNomeStud = data[i]['cognome'] +" "+data[i]['nome'];
                 var pathImg = data[i]['file'];
                 var frase = data[i]['frase'];
-                stringa = stringa + "<div class='gallery'> <div class='desc'>"+cognomeNomeStud+"</div><img width=180px height=220px src='"+pathImg+"' class ='foto'><div class='desc'>"+frase+"</div></div>";
+                
+                stringa = stringa +
+                    '<li class="mdc-image-list__item">' +
+                    '<img class="mdc-image-list__image" src="'+ pathImg+'">' +
+                    '<div class="mdc-image-list__supporting">' +
+                    '<span class="mdc-image-list__label"><b>'+ cognomeNomeStud +'</b></span><br>' +
+                    '<span class="mdc-image-list__label"><i>'+ frase +'</i></span></div></li>';
             }
         }
-        $("#container").append(stringa);
+        console.log(stringa);
+        $("#container").html(stringa);
         $("#loading").hide();
 
 

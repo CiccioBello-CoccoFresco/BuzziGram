@@ -10,5 +10,6 @@ import img  from "../img/polaroid.jpg";
 classi.caricaClassi();
 
 $('#sub').on('click', ()=>{
+    $('#as').val(classi.calcolaAnnoScolastico());
     $('#submittami').submit();
 })

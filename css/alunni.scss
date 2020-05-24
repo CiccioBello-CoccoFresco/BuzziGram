@@ -1,3 +1,36 @@
+@use "theme";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/top-app-bar";
+@use "@material/icon-button";
+@use "@material/image-list/mdc-image-list";
+@use "@material/image-list";
+
+@include icon-button.core-styles;
+
+header{
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 15%;
+}
+
+.fit-to-parent{
+  height: 100%;
+}
+
+.icon {
+  @include icon-button.icon-size(32px);
+}
+
+.mdc-top-app-bar__row{
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.my-image-list {
+  @include image-list.standard-columns(5);
+}
+/**
 body
     background-repeat: no-repeat
     background-attachment: fixed
@@ -44,4 +77,4 @@ div.gallery
     margin:-350px 0 0 -800px
     background: white
     opacity: 0.8
- 
+*/

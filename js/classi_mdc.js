@@ -18,8 +18,10 @@ const buttonRipples = [].map.call(document.querySelectorAll('.mdc-button'), func
 });
 
 const select = new MDCSelect(document.querySelector('.mdc-select'));
+
 select.listen('MDCSelect:change', () => {
-  
+
 });
 
+export default { select, tabBar };
 // Instantiation
