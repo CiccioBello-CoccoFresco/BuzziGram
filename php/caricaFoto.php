@@ -32,7 +32,7 @@
         $conn = openConn();
         $classe = $_GET['id'];
         echo $classe; 
-        $studente = 1;//prendi da sessione
+        $studente = 4;//prendi da sessione
         $insDate = date("Y-m-d");
         if($_POST['frase']=="") $frase = "Frase predefinita";
         else $frase = $_POST['frase'];

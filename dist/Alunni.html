@@ -1,14 +1,26 @@
+<!DOCTYPE html>
 <html>
     <head>   
         <link rel="stylesheet" type="text/css" href="./assets/alunni.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
-
-
-    <body>
-        <div class="divpos">
-            <div id = "container" >
-                 <img id="loading" src="../img/loading.gif" class="hidden">
+    <body class="mdc-typography">
+        <header class="mdc-top-app-bar">
+            <div class="fit-to-parent mdc-top-app-bar__row">
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button id='back' class="icon material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Indietro">arrow_back</button>
+              </section>
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <button id='ap' class="icon material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Area Perosnale">person</button>
+              </section>
             </div>
+        </header>
+
+        <div class="divpos">
+            <ul id="container" class="mdc-image-list standard-image-list mdc-image-list--with-text-protection" my-image-list">
+                <img id="loading" src="../img/loading.gif" class="hidden">
+            </ul>
         </div>
         <script src="./assets/alunni.js"></script>
     </body>

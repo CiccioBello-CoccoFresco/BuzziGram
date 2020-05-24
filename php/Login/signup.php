@@ -17,33 +17,37 @@
         if(strlen($classe) === 3) $sezione = $sezione . $classe[2];
         $email = $_POST['email'];
         $psw = md5($_POST['psw']);
-        $as = '2019/2020';
+        $as = $_POST['as'];
         isset($_POST['rap']) ? $rap = 1 : $rap = 0;
         $conn = openConn();
         $conn->begin_transaction();
         $stmt = $conn->prepare('insert into studente(nome, cognome) values (?,?)');
         $stmt->bind_param("ss", $nome, $cognome);
-        $stmt->execute();
+        $app=$stmt->execute();
+        if(!$app) $conn->rollback();
         $idStudente = $stmt->insert_id;
         $stmt = $conn->prepare('insert into utente(id, email, password) values (?,?,?)');
         $stmt->bind_param("iss", $idStudente, $email, $psw);
-        $stmt->execute();
+        $app=$stmt->execute();
+        if(!$app) $conn->rollback();
         $stmt = $conn->prepare('select id from classe where anno = ? and sezione = ? and anno_scolastico = ?');
         $stmt->bind_param("iss", $anno, $sezione, $as);
-        $stmt->execute();
+        $app=$stmt->execute();
+        if(!$app) $conn->rollback();
         $idClasse = $stmt->get_result()->fetch_row()[0];
         $stmt = $conn->prepare('insert into frequenta values (?,?,?)');
         $stmt->bind_param("iii", $idStudente, $idClasse, $rap);
-        $stmt->execute();
-        $app = $conn->commit();
+        $app=$stmt->execute();
+        if(!$app) $conn->rollback();
+        $fin = $conn->commit();
         closeConn($conn);
-        if($app){
+        if($fin && $app){
             echo '<script> alert("Registrazione avvenuta con successo. Stai per essere reindirizzato alla pagina di login"); 
             window.location = "../../";
             </script>';
         } else {
             echo '<script> alert("Problema di registrazione, la preghiamo di riprovare!"); 
-            window.location = "../../dist/Login/registrazione.html";
+            window.location = "../../dist/registrazione.html";
             </script>';
         }
     }

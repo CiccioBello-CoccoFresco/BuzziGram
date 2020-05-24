@@ -64,7 +64,7 @@ function caricaClassiAnnuario(anno, as = calcolaAnnoScolastico()) {
                     index = penso tu sappia cos'è un indice per scorrere un array
                     attributo:
                         id : id della classe, usalo come parametro nel link ad Alunni.php?id=
-                        anno : anno della classe(prima, seconda, terza, quarta, quinta)
+                        anno : anno della classe(1, 2, 3, 4, 5)
                         sezione : chissà cos'è la sezione
                     */
                     var stringa="";
