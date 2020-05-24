@@ -4,21 +4,20 @@
         $as = $_GET["as"];
         if(isset($_GET['anno'])) {
             $anno = $_GET['anno'];
-            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . ' and anno ='.$anno.'ORDER BY anno, sezione ASC';
+            $sql = 'SELECT id, anno, sezione FROM classe WHERE anno_scolastico ="'. $as . '" and anno ='.$anno.'ORDER BY anno, sezione ASC';
             $conn = openConn();
             $result = $conn->query($sql);
             closeConn($conn);
             // output data of each row
             $array = array();
-            if(isset($result)){
-                if($result->num_rows == 0){
-                    array_push($array, "norows");
-                }else{
-                    while($row = $result->fetch_assoc()) {
-                        array_push($array,$row);
-                    }
+            if($result->num_rows == 0){
+                array_push($array, "norows");
+            }else{
+                while($row = $result->fetch_assoc()) {
+                    array_push($array,$row);
                 }
-            }else array_push($array, "norows");
+            }
+            //var_dump($array);
             echo json_encode($array);
             
         }else{
