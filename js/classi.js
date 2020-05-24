@@ -2,32 +2,35 @@ import '../css/classi.scss'
 
 window.$ = require('../node_modules/jquery/dist/jquery');
 import classi from "./classiLib";
-import './classi_mdc';
+import as from './classi_mdc';
 
-let mode = 'biennio'; 
+
 
 $(document).ready(() => {
+    // set tab margin to match header 
     var h = $('header').height();
-    console.log(h);
     $('#annuario').css('margin-top', h+'px');
+
+    // page initialization
+    let ascol = classi.calcolaAnnoScolastico();
+    let anno = as.tabBar.foundation_.adapter_.getFocusedTabIndex() + 2;
+    as.select.value = ascol;
+    console.log(anno+ " " +ascol);
+    classi.caricaClassiAnnuario(anno, ascol);
     
     $(function() {
         classi.caricaAnni();  
     });
-    $("#as").on("change", function(){
-        var annoSelezionato = $(this).children("option:selected").val();
-        //$("#annoSelezionato").innerHTML = annoSelezionato;
-        classi.caricaClassiAnnuario(mode, annoSelezionato);
+
+    $("#tabs").on("MDCTabBar:activated", function(){
+        anno = as.tabBar.foundation_.adapter_.getFocusedTabIndex() + 1;
+        console.log(anno+ " " +ascol);
+        classi.caricaClassiAnnuario(anno, ascol);
     });
-    $("#biennio").on("click", function(){
-        var annoSelezionato = $("#as").children("option:selected").val();
-        mode = "biennio";
-        classi.caricaClassiAnnuario(mode, annoSelezionato);
-    });
-    $("#triennio").on("click", function(){
-        var annoSelezionato = $("#as").children("option:selected").val();
-        mode = "triennio";
-        classi.caricaClassiAnnuario(mode, annoSelezionato);
+    $(".scelta").on("MDCSelect:change", function(){
+        ascol = as.select.value;
+        console.log(anno+ " " +ascol);
+        classi.caricaClassiAnnuario(anno, ascol);
     });
 });
 

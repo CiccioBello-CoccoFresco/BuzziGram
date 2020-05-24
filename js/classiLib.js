@@ -22,16 +22,16 @@ function caricaAnni(){
         }
     }).done(function (data){
 
-        console.log(data);
+        //console.log(data);
         var stringa = '';
 
         for(var i = 0; i<data.length; i++){
             var anno = data[i]["anno_scolastico"];
-            stringa = stringa + '<li class="mdc-list-item mdc-list-item" data-value="'+ anno +'">';
+            if(anno === calcolaAnnoScolastico()) stringa = stringa + '<li class="mdc-list-item mdc-list-item mdc-list-item--selected" data-value="'+ anno +'" aria-selected="true">';
+            else stringa = stringa + '<li class="mdc-list-item mdc-list-item" data-value="'+ anno +'">';
             stringa += '<span class="mdc-list-item__text">'+ anno +  "</span></li>";
         }
 
-        console.log(stringa);
         $("#anni").append(stringa);
         var temp=calcolaAnnoScolastico();
         $("#dropdown").val(temp);
@@ -47,16 +47,14 @@ function caricaClassiAnnuario(anno, as = calcolaAnnoScolastico()) {
         as    : as,
         anno : anno
     };
-    console.log("../login/getClassi.php?" + $.param(obj));
     var url = "../php/getClassi.php?" + $.param(obj);
         $.ajax({
             url: url
             ,dataType: "json"
             ,error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log(textStatus);
+                console.log(errorThrown);
             }
-        })
-            .done(function (data){
+        }).done(function (data){
 
                 console.log(data);
                 if(data[0] === 'norows') var stringa = "<p>Nessuna classe trovata</p>";
@@ -69,29 +67,22 @@ function caricaClassiAnnuario(anno, as = calcolaAnnoScolastico()) {
                         anno : anno della classe(prima, seconda, terza, quarta, quinta)
                         sezione : chissà cos'è la sezione
                     */
-                    var stringa = "<table id='tabella' border = '1px'><th colspan = 4>"+mode+"</th>";
-                    var rows = parseInt(data.length/4);
-                    var resto = parseInt(data.length%4);
-                    var i = 0;
-                    for(var k=0; k<rows; k++){
-                        var stringa = stringa + "<tr>";
-                        for(var j=0; j<4; j++){
-                            var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-                            var stringa = stringa + "<td id='classe'><a href=Alunni.php?id="+data[i]['id']+">"+classeOttenuta+"</a></td> ";
-                            var i = i+1;
-                        }
-                        var stringa = stringa + "</tr>";
+                    var stringa="";
+                    for(var i=0; i < data.length; i++){
+                        var row = data[i];
+                        //console.log(row);
+                        var classe = ''+row['anno']+row['sezione'];
+                        //console.log(classe);
+                        stringa += 
+                        '<div class="mdc-layout-grid__cell--span-2">' +
+                            '<div class="my-card mdc-card">' +
+                                '<div class="fit mdc-card__primary-action" tabindex="0">' +
+                                '<a href="Alunni.html?id='+ row['id'] +'" <div class="card-label mdc-typography--headline1">' + classe +'</div></div></div></div>';
                     }
-                    var stringa = stringa + "<tr>";
-                    for(var j=0; j < resto; j++){
-                        var classeOttenuta = data[i]["anno"] + data[i]["sezione"];
-                        var stringa = stringa + "<td id='classe'><a href=Alunni.html?id="+data[i]['id']+">"+classeOttenuta+"</a></td> ";
-                        var i=i+1;
-                    }
-                    var stringa = stringa + "</tr>";
-                    var stringa = stringa + "</table>";
+                    
+                    //console.log(stringa);
                 }
-                $("#annuario").html(stringa);
+                $("#classes").html(stringa);
 
             })
             .fail(function () {
