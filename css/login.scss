@@ -9,6 +9,22 @@
 @include button.core-styles;
 @include textfield.core-styles;
 
+.main {
+  height: 97vh;
+  width: 99vw;
+}
+
+.center-fit{ 
+  background-image: url("../img/imglog.jpg");
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: fit-content;
+}
+
+.fit {
+  height: 100%;
+  width: 100%;
+}
 
 /**
 * {
