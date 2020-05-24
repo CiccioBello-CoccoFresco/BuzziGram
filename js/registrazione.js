@@ -6,7 +6,7 @@ require('./registrazione_mdc');
 import classi from "./classiLib";
 import img  from "../img/polaroid.jpg";
 
-$("#imgbox").append('<img src="./assets/'+img+'">').addClass('mdc-image-list__image').addClass('center-fit');
+// $("#imgbox").append('<img class="center-fit" src="./assets/'+img+'">');
 classi.caricaClassi();
 
 $('#sub').on('click', ()=>{
