@@ -5251,6 +5251,16 @@ svg.mdc-button__icon {
   padding-left: 2px;
 }
 
+.main {
+  height: 97vh;
+  width: 99vw;
+}
+
+.fit {
+  height: 100%;
+  width: 100%;
+}
+
 .demo-width-class {
   width: 400px;
 }
@@ -5270,8 +5280,12 @@ svg.mdc-button__icon {
 }
 
 .center-fit {
+  background-image: url(cf1ac9b816127a28c5e1b794647c259c.jpg);
+  background-repeat: no-repeat;
   max-width: 100%;
-  max-height: 100%;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .text {

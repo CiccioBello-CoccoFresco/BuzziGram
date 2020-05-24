@@ -7,6 +7,10 @@ import './classi_mdc';
 let mode = 'biennio'; 
 
 $(document).ready(() => {
+    var h = $('header').height();
+    console.log(h);
+    $('#annuario').css('margin-top', h+'px');
+    
     $(function() {
         classi.caricaAnni();  
     });

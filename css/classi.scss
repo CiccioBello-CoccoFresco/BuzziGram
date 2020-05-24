@@ -13,6 +13,12 @@
 @use "@material/touch-target/mdc-touch-target";
 @use "@material/touch-target";
 
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab/mdc-tab";
+@use "@material/tab";
+
 @include button.core-styles;
 @include icon-button.core-styles;
 
@@ -20,6 +26,7 @@ header{
   top: 0px;
   right: 0px;
   left: 0px;
+  height: 15%;
 }
 
 #ap{
@@ -33,9 +40,10 @@ header{
   user-select:none;
 }
 
-.nav{
-  height: 15%;
+.icon{
+ padding-left: 8px;
 }
+
 
 .fit-to-parent{
   height: 100%;
@@ -52,11 +60,6 @@ header{
 
 .scelta{
   margin-right: 10px;
-}
-.btn{
-  @include button.height(32px);
-  @include button.ink-color(#000000);
-  margin-right: 5px;
 }
 
 #annuario{
