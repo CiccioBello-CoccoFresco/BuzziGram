@@ -39,15 +39,15 @@
         $stmt->bind_param("iii", $idStudente, $idClasse, $rap);
         $app=$stmt->execute();
         if(!$app) $conn->rollback();
-        $app = $conn->commit();
+        $fin = $conn->commit();
         closeConn($conn);
-        if($app){
+        if($fin && $app){
             echo '<script> alert("Registrazione avvenuta con successo. Stai per essere reindirizzato alla pagina di login"); 
             window.location = "../../";
             </script>';
         } else {
             echo '<script> alert("Problema di registrazione, la preghiamo di riprovare!"); 
-            window.location = "../../dist/Login/registrazione.html";
+            window.location = "../../dist/registrazione.html";
             </script>';
         }
     }
