@@ -20,7 +20,7 @@ function caricaDati(){
         url: url
         ,dataType: "json"
         ,error: function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(textStatus);
+            console.log(errorThrown);
         }
     })
     .done(function (data){
@@ -34,25 +34,29 @@ function caricaDati(){
         4->data.lenght: anno_scolastico, anno, sezione, foto, frase per ogni classe frequentata, foto = null ->inserire link a inserimento
         */
         console.log(data);
-        if(data[0]=="norows") var stringa  = "Non sono state trovate informazioni";
+        if(data[0]== "redirect") window.location.replace("../dist/login.html");
         else{
-            var stringa = "<div>INFORMAZIONI PERSONALI"+
-            "<br>Email :"+ data[0]+
-            "<br>Cognome :"+ data[2]+
-            "<br>Nome :"+ data[1];
-            
-            $("#info").append(stringa);
-            //stringa = "";
-            if(data[3]==="foto")  {
-                console.log("Carico le foto");
-                getFoto();
-            }else{
-                console.log('Admin');
-                zonaAdmin();
+            if(data[0]=="norows") var stringa  = "Non sono state trovate informazioni";
+            else{
+                var stringa = "<div>INFORMAZIONI PERSONALI"+
+                "<br>Email :"+ data[0]+
+                "<br>Cognome :"+ data[2]+
+                "<br>Nome :"+ data[1];
+                
+                $("#info").append(stringa);
+                //stringa = "";
+                if(data[3]==="foto")  {
+                    console.log("Carico le foto");
+                    getFoto();
+                }else{
+                    console.log('Admin');
+                    zonaAdmin();
+                }
+                stringa = stringa + "</div>";
+                
             }
-            stringa = stringa + "</div>";
-            
         }
+        
         
     })
     .fail(function () {
@@ -113,10 +117,12 @@ function zonaAdmin(as = calcolaAnnoScolastico()){
     })
     .done(function (data){
         console.log(data);
-        if(data !== "1"){
-            var stringa = "INSERISCI LE CLASSI DELL'ANNO SCOLASTICO "+as+"<br>(Esempio 1A,2B,3CD,4E....)<br>"+
-            "<form action='../php/insClassi.php?as="+as+"' method='POST'><input type='text' name='classi' id='classi' required><input type='submit' id='bottone' value='Invia'></form>";
-
+        if(data == "redirect") window.location.replace("../dist/login.html");
+        else{
+            if(data !== "1"){
+                var stringa = "INSERISCI LE CLASSI DELL'ANNO SCOLASTICO "+as+"<br>(Esempio 1A,2B,3CD,4E....)<br>"+
+                "<form action='../php/insClassi.php?as="+as+"' method='POST'><input type='text' name='classi' id='classi' required><input type='submit' id='bottone' value='Invia'></form>";    
+            }else var stringa = "Classi inserite per l'anno scolastico "+as;
             $("#insClasse").append(stringa);
         }
     })

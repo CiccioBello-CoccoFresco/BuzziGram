@@ -43,25 +43,21 @@
         }
     }
 
-    function registerSession($remeberMe) {
+    function registerSession() {
         session_start();
 
         $token = $_COOKIE['PHPSESSID'];
         try{
             $conn = openConn();
             $stmt = $conn->prepare('Update utente set token = ? where email = ? and password = ?');
-            $psw = md5($_POST['password']);
+            $psw = md5($_POST['psw']);
             $stmt->bind_param("sss", $token, $_POST['email'], $psw);
             $stmt->execute();
             closeConn($conn);
         } catch(PDOException $e){
 			echo "Error: " . $e->getMessage();
         }
-        if($remeberMe){
-            $params = session_get_cookie_params();
-            setcookie(session_name(), $_COOKIE[session_name()], time() + 60*60*24*30, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
-        }
-        if(!isset($_SESSION['nome'])){
+        //if(!isset($_SESSION['nome'])){
             $conn = openConn();
             $stmt = $conn->prepare('Select s.nome, s.cognome, u.id from studente s join utente u on u.id = s.matricola where u.token = ?');
             $stmt->bind_param("s", $token);
@@ -71,10 +67,10 @@
             $_SESSION['user'] = $row['id'];
             $_SESSION['nome'] = "".$row['nome'][0].". ".$row['cognome']; 
             closeConn($conn);
-        }
+        //}
         $_SESSION['token'] = $token;
         $_SESSION['time'] = time();
-        $_SESSION['ricordami'] = $remeberMe;
+        //$_SESSION['ricordami'] = $remeberMe;
         //var_dump($_SESSION);
         // setcookie('PHPSESSID', $token, time()+60*60*24*30, "/", "", false, true);
     }

@@ -1,5 +1,7 @@
 <?php
     include_once 'utils/dbConnection.php';
+    include_once '../php/Utils/session_control.php';
+    if(!checkSession()) header('Location: ../dist/login.html');
     function startsWith ($string, $startString) { 
         $len = strlen($startString); 
         return (substr($string, 0, $len) === $startString); 

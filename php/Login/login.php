@@ -1,6 +1,7 @@
 <head>
     <?php
         include_once '../../php/Utils/dbConnection.php';
+        include_once '../Utils/session_control.php';
     ?>
 </head>
 <?php
@@ -18,7 +19,9 @@ $stmt->bind_param("ss", $email, $psw);
 $stmt->execute();
 $result = $stmt->get_result();
 closeConn($conn);
-if($result->num_rows != 0) Header('Location: ../../dist/Classi.html');
-else echo 'Credenziali errate';
+if($result->num_rows != 0) {
+    registerSession();
+    Header('Location: ../../dist/Classi.html');
+}else echo 'Credenziali errate';
 
 ?>
