@@ -1,5 +1,6 @@
-
+import cicciobello from "../img/Cicciobello.jpg";
 import classi from "./classiLib";
+
 function calcolaAnnoScolastico() {
     var d = new Date();
     var y = d.getFullYear() - 2000;
@@ -38,6 +39,7 @@ function caricaDati(){
         else{
             if(data[0]=="norows") var stringa  = "Non sono state trovate informazioni";
             else{
+                console.log(cicciobello);
                 var stringa = '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline4">INFORMAZIONI PERSONALI</span></div>'+
                 '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Email: </span><span>'+ data[0]+ '</span></div>'+ 
                 '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Cognome: </span><span>'+ data[2]+ '</span></div>'+ 
@@ -87,7 +89,7 @@ function getFoto(){
                 var frase = data[i]['frase'];
                 var stringa = stringa + "<img width=180px height=220px src='"+pathImg+"'class ='foto'>";
             }else{
-                var stringa = stringa + "<img width=180px height=220px src='../img/Cicciobello.png' class ='foto'>";
+                var stringa = stringa + "<img width=180px height=220px src='./assets/"+ cicciobello +"' class ='foto'>";
                 if(as === calcolaAnnoScolastico()){
                     var frase = "<a href='../php/caricaFoto.php?id="+data[i]['id']+"'>Inserisci foto</a>";
                 }else var frase = "foto non inserita";   
@@ -103,8 +105,7 @@ function getFoto(){
     })
 }
 
-function zonaAdmin(as = calcolaAnnoScolastico()){ù
-    as = '20/21';
+function zonaAdmin(as = calcolaAnnoScolastico()){
     var obj = {
         as    : as,
     };
