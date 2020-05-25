@@ -2853,6 +2853,25 @@ svg.mdc-button__icon {
   padding-left: 2px;
 }
 
+.main {
+  height: 97vh;
+  width: 99vw;
+}
+
+.center-fit {
+  background-image: url(6f1c1cc4130902009308b70ac5b7f238.jpg);
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.fit {
+  height: 100%;
+  width: 100%;
+}
+
 /**
 * {
   margin: 0;
