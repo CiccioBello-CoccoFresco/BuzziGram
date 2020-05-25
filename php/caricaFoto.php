@@ -14,9 +14,12 @@
                     //query per vedere se ha già inserito foto per la classe
                     $id = $_GET['id'];
                     $studente = $_SESSION['user'];
-                    $sql = "SELECT frase from immagine i left join frequenta f on i.classe = f.classe and i.studente = f.studente where i.studente =".$studente." and i.classe =".$id;
+                    $sql = "SELECT frase from immagine i left join frequenta f on i.classe = f.classe and i.studente = f.studente where i.studente = ? and i.classe = ?";
                     $conn = openConn();
-                    $result = $conn->query($sql);
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("ii", $studente,$id);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
                     closeConn($conn);
                     $row = $result->fetch_assoc();
                     if(isset($row['frase'])) echo "E' stata già inserita una foto per questo studente nella classe indicata";
@@ -40,9 +43,15 @@
         if($_POST['frase']=="") $frase = "Frase predefinita";
         else $frase = $_POST['frase'];
         
-        $sql = "insert into immagine(file,frase,studente,classe,inserimento) values('".$image."','".$frase."',".$studente.",".$classe.",'".$insDate."')";
+        $sql = "insert into immagine(file,frase,studente,classe,inserimento) values(?,?,?,?,?)";
+        $conn = openConn();
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssiis", $image,$frase,$studente,$classe,$insDate);
+        
+        //$result = $stmt->get_result();
+        //closeConn($conn);
         //$result = $conn->query($sql);
-        if ($conn->query($sql) === TRUE) {
+        if ($stmt->execute() === TRUE) {
             echo "FOTO INSERITA CORRETTAMENTE";
         } else {
             echo "Errore :".$conn->error;

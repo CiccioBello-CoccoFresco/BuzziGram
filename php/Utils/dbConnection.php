@@ -3,7 +3,7 @@
         $servername = "0.tcp.ngrok.io:13897";
         $username = "root";
         $password = "";
-		$db = "buzzigram";
+		$db = "buzzigramProd";
 
 		$conn = new mysqli($servername, $username, $password,$db) or die("Connect failed: %s\n". $conn -> error);
 
