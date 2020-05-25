@@ -23,6 +23,6 @@ $(document).ready(() => {
     });
     $('#back').on("click", ()=>{
         window.location = "./Classi.html"
-    })
+    });
 
 });
