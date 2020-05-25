@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
+/***/ "./img/imglog.jpg":
+/*!************************!*\
+  !*** ./img/imglog.jpg ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"6f1c1cc4130902009308b70ac5b7f238.jpg\");\n\n//# sourceURL=webpack:///./img/imglog.jpg?");
+
+/***/ }),
+
 /***/ "./js/login.js":
 /*!*********************!*\
   !*** ./js/login.js ***!
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_login_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/login.scss */ \"./css/login.scss\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _login_mdc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login_mdc */ \"./js/login_mdc.js\");\n //JS\n\nwindow.$ = __webpack_require__(/*! ../node_modules/jquery/dist/jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n\n//# sourceURL=webpack:///./js/login.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_login_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/login.scss */ \"./css/login.scss\");\n/* harmony import */ var _img_imglog_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/imglog.jpg */ \"./img/imglog.jpg\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _login_mdc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login_mdc */ \"./js/login_mdc.js\");\n\n //JS\n\nwindow.$ = __webpack_require__(/*! ../node_modules/jquery/dist/jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\n\n\n//# sourceURL=webpack:///./js/login.js?");
 
 /***/ }),
 

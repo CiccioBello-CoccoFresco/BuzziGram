@@ -78,6 +78,7 @@
             <input type="text" name = "frase">
             <input type="submit" id ="subBTN" name="submit" value = "Invia">
         </form>
+
+        <button id="blyat" onclick="window.location = '../dist/areaPersonale.html'"> TORNA INDIETRO </button>
     </body>
-    
 </html>

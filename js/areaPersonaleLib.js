@@ -42,7 +42,7 @@ function caricaDati(){
                 '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Email: </span><span>'+ data[0]+ '</span></div>'+ 
                 '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Cognome: </span><span>'+ data[2]+ '</span></div>'+ 
                 '<div class="mdc-layout-grid__cell--span-12"><span class="mdc-typography--headline5">Nome: </span><span>'+ data[1] + '</span></div>';
-                
+
                 $("#info").html(stringa);
                 //stringa = "";
                 if(data[3]==="foto")  {
@@ -52,7 +52,7 @@ function caricaDati(){
                     console.log('Admin');
                     zonaAdmin();
                 }
-                stringa = stringa + "</div>";
+                
                 
             }
         }
