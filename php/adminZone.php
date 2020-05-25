@@ -4,7 +4,7 @@
     else{
         if(isset($_GET['as'])){
             include_once './Utils/dbConnection.php';
-            $as = $_GET["as"];
+            $as = '20/21';//$_GET["as"];
             $sql = "Select id from classe where anno_scolastico = '".$as."'";
             $conn = openConn();
             $result = $conn->query($sql);
