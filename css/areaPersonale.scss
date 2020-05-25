@@ -1,0 +1,24 @@
+@use 'theme';
+@use "@material/typography/mdc-typography";
+@use "@material/typography";
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/layout-grid";
+
+@include icon-button.core-styles;
+
+header{
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 15%;
+}
+
+.icon {
+    @include icon-button.icon-size(32px);
+}
+
+.fit-to-parent{
+    height: 100%;
+}
