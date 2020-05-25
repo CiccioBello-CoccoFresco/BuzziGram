@@ -103,7 +103,8 @@ function getFoto(){
     })
 }
 
-function zonaAdmin(as = calcolaAnnoScolastico()){
+function zonaAdmin(as = calcolaAnnoScolastico()){ù
+    as = '20/21';
     var obj = {
         as    : as,
     };
