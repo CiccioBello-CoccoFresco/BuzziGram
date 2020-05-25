@@ -1,6 +1,6 @@
 <?php
 	function openConn(){
-        $servername = "0.tcp.ngrok.io:15891";
+        $servername = "0.tcp.ngrok.io:17204";
         $username = "root";
         $password = "";
 		$db = "buzzigram";
